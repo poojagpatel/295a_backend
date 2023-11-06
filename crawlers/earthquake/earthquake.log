@@ -1,0 +1,13 @@
+2023-11-03 01:44:25,316 - ERROR - An error occurred: 'lastUpdated'
+2023-11-03 01:48:00,506 - ERROR - An error occurred: 'lastUpdated'
+2023-11-03 01:49:18,719 - ERROR - No 'lastUpdated' field found in the new earthquake data
+2023-11-03 01:50:14,305 - INFO - New earthquake data appended to earthquake.json
+2023-11-03 02:27:43,033 - ERROR - An error occurred: module 'datetime' has no attribute 'utcfromtimestamp'
+2023-11-03 02:36:50,991 - ERROR - An error occurred: module 'datetime' has no attribute 'utcfromtimestamp'
+2023-11-03 02:42:28,256 - ERROR - An error occurred: module 'datetime' has no attribute 'utcfromtimestamp'
+2023-11-03 02:44:00,239 - ERROR - An error occurred: module 'datetime' has no attribute 'utcfromtimestamp'
+2023-11-03 02:47:55,071 - INFO - New earthquake data appended to earthquake.json
+2023-11-03 02:49:41,105 - INFO - New earthquake data appended to earthquake.json
+2023-11-03 02:51:57,087 - ERROR - An error occurred: 'lastUpdated'
+2023-11-03 02:54:25,947 - INFO - New earthquake data appended to earthquake.json
+2023-11-04 00:04:06,894 - INFO - New earthquake data appended to earthquake.json
