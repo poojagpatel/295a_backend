@@ -11,3 +11,24 @@
 2023-11-03 02:51:57,087 - ERROR - An error occurred: 'lastUpdated'
 2023-11-03 02:54:25,947 - INFO - New earthquake data appended to earthquake.json
 2023-11-04 00:04:06,894 - INFO - New earthquake data appended to earthquake.json
+2023-11-18 16:58:00,236 - INFO - New earthquake data appended to earthquake.json
+2023-11-26 13:16:19,262 - ERROR - An error occurred: localhost:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6563b584d2bb73003907d49b, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2023-11-26 13:17:28,624 - ERROR - An error occurred: localhost:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 6563b5ca85ee3eb5142e7e01, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2023-11-26 13:21:32,264 - ERROR - An error occurred: Port must be an integer between 0 and 65535: 'your_port'
+2023-11-26 13:22:59,065 - ERROR - An error occurred: name 'load_dotenv' is not defined
+2023-11-26 13:32:33,177 - INFO - New earthquake data appended to earthquake.json
+2023-11-26 13:45:06,826 - INFO - Earthquake data for the past month appended to MongoDB
+2023-11-26 13:48:46,800 - INFO - Earthquake data for the past month appended to MongoDB
+2023-11-26 14:05:55,682 - ERROR - An error occurred: 
+2023-11-26 14:07:56,844 - ERROR - An error occurred: 
+2023-11-26 14:09:32,352 - INFO - Earthquake data for the past month appended to MongoDB
+2023-11-26 14:19:25,657 - ERROR - An error occurred: 
+2023-11-26 14:20:35,523 - INFO - Earthquake data for the past month appended to MongoDB
+2023-11-26 14:27:07,911 - ERROR - An error occurred: 
+2023-11-26 14:29:55,221 - ERROR - An error occurred: 
+2023-11-26 14:32:42,579 - ERROR - An error occurred: 
+2023-11-26 14:35:10,312 - ERROR - An error occurred: 
+2023-11-26 14:38:21,169 - ERROR - An error occurred: 
+2023-11-26 14:45:15,956 - ERROR - An error occurred: 
+2023-11-26 14:50:32,261 - ERROR - An error occurred: 
+2023-11-26 15:00:11,828 - INFO - New earthquake data appended to earthquake.json

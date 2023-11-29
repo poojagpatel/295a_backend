@@ -1,3 +1,4 @@
+import pdb
 import pandas as pd
 import json
 import requests
@@ -32,10 +33,10 @@ def scrape_data(url):
 
 # List of URLs to scrape
 urls = ['https://inciweb.nwcg.gov//incident-information/caknp-redwood-fire',
-        'https://inciweb.nwcg.gov//incident-information/casqf-rabbit-fire',
-        'https://inciweb.nwcg.gov//incident-information/orrsf-anvil-fire',
-        'https://inciweb.nwcg.gov//incident-information/xx1002-flat-fire',
-        'https://inciweb.nwcg.gov//incident-information/castf-2023stfquarry-fire'
+        # 'https://inciweb.nwcg.gov//incident-information/casqf-rabbit-fire',
+        # 'https://inciweb.nwcg.gov//incident-information/orrsf-anvil-fire',
+        # 'https://inciweb.nwcg.gov//incident-information/xx1002-flat-fire',
+        # 'https://inciweb.nwcg.gov//incident-information/castf-2023stfquarry-fire'
 
         ]
 
