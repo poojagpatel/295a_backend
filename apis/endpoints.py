@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 client=connect_to_mongodb()
 
-db = client['ENDDB']  # Replace 'your_database_name' with your actual database name
+db = client['ENDDB'] 
 
 # Endpoint to fetch all data from the 'earthquakes' collection
 @app.route('/api/eq', methods=['GET'])
@@ -23,7 +23,9 @@ def get_earthquakes():
     return jsonify(list(earthquakes_data))
 
 
-# Endpoint to fetch all data from the 'earthquakes' collection
+# Endpoint to fetch all data from the 'Wildfire' collection
+#todo: add data in wildfire collection first.
+
 @app.route('/api/wf', methods=['GET'])
 
 def get_earthquakes():
