@@ -28,7 +28,7 @@ def get_earthquakes():
 
 @app.route('/api/wf', methods=['GET'])
 
-def get_earthquakes():
+def get_wildfires():
     # Access the 'earthquakes' collection
     earthquakes_collection = db['wildfires']
 
