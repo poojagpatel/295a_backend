@@ -41,13 +41,13 @@ try:
         new_earthquake_data["features"].sort(
             key=lambda x: x["properties"]["time"], reverse=True)
 
-        # Save the new data to a JSON file
-        with open("earthquake.json", "w") as json_file:
-            json.dump(new_earthquake_data, json_file, default=str, indent=4)
-
         # Update the last update date in the "metadata" section
         new_last_updated = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         new_earthquake_data["metadata"]["lastUpdated"] = new_last_updated
+
+        # Save the new data to a JSON file
+        with open("earthquake.json", "w") as json_file:
+            json.dump(new_earthquake_data, json_file, default=str, indent=4)
 
         print(f"New earthquake data saved to earthquake.json (latest first)")
 
