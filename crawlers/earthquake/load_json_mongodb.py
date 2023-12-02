@@ -1,30 +1,38 @@
 import json
-
-import pymongo
-
+from pymongo import MongoClient, UpdateOne
 from utility import connect_to_mongodb
 
-def update_or_insert_earthquake(record):
-    # Update or insert the earthquake record into the MongoDB collection
-    query = {"properties.code": record["properties"]["code"]}
-    result = collection.replace_one(query, record, upsert=True)
-    print(f"Record updated: {result.modified_count}, Record inserted: {result.upserted_id}")
+def update_or_insert_earthquakes(records):
+    # Create a list of UpdateOne operations for bulk update/insert
+    operations = [
+        UpdateOne(
+            {"properties.code": record["properties"]["code"]},
+            {"$set": record},
+            upsert=True
+        )
+        for record in records
+    ]
 
+    # Execute bulk write operations
+    result = collection.bulk_write(operations)
+
+    print(f"Records updated: {result.modified_count}, Records inserted: {result.upserted_count}")
 
 # Read data from the JSON file
 with open("./earthquake.json", "r") as file:
     data = json.load(file)
 
-client=connect_to_mongodb()
+client = connect_to_mongodb()
 
-db = client['ENDDB'] 
+db = client['ENDDB']
 collection = db["earthquakes"]  # Replace with your actual collection name
 
-# Insert data into MongoDB
+# Use 'id' as '_id' in MongoDB for each feature
 for feature in data["features"]:
-    # Use 'id' as '_id' in MongoDB
     feature["_id"] = feature["id"]
     del feature["id"]  # Remove the original 'id' field
-    update_or_insert_earthquake(feature)
+
+# Insert data into MongoDB using bulk operations
+update_or_insert_earthquakes(data["features"])
 
 print("Data inserted into MongoDB.")
