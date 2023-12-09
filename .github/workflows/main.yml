@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - test
+    paths:
+      - 'apis/**'
+      - 'requirements.txt'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: test  # Set the branch to 'test'
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build and push Docker image
+      run: |
+        echo ${{ secrets.AWS_ACCESS_KEY_ID }} | docker login -u ${{ secrets.AWS_REGISTRY_USER }} --password-stdin ${{ secrets.AWS_REGISTRY }}
+        docker build -t ${{ secrets.AWS_REGISTRY }}/myflaskapp ./apis
+        docker push ${{ secrets.AWS_REGISTRY }}/myflaskapp
+
+    - name: SSH into EC2 instance and pull the latest image
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_PRIVATE_KEY }}
+        script: |
+          docker pull ${{ secrets.AWS_REGISTRY }}/myflaskapp
+          docker stop myflaskapp || true
+          docker rm myflaskapp || true
+          docker run -d -p 80:5000 --name myflaskapp ${{ secrets.AWS_REGISTRY }}/myflaskapp
