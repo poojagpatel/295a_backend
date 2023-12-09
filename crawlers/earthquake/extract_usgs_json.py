@@ -7,7 +7,6 @@ import json
 import logging
 from datetime import datetime, timedelta
 
-from utility import convert_unix_milliseconds_to_datetime
 import requests
 
 # Configure logging
