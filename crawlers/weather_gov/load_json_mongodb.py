@@ -48,5 +48,3 @@ async def main():
 import asyncio
 asyncio.run(main())
 
-
-#mongodb://mongoadmin:mongoadmin@3.145.172.216:27017/ENDDB?authSource=admin
