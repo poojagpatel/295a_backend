@@ -39,13 +39,29 @@ def get_earthquakes():
 
 def get_wildfires():
     # Access the 'earthquakes' collection
-    earthquakes_collection = db['wildfires']
+    wildfires_collection = db['wildfires']
 
     # Use the find method on the collection to retrieve all data
-    earthquakes_data = earthquakes_collection.find({}, {'_id': 0})
+    wildfires_data = wildfires_collection.find({}, {'_id': 0})
 
     # Convert the cursor to a list and jsonify the result
-    return jsonify(list(earthquakes_data))
+    return jsonify(list(wildfires_data))
+
+
+# Endpoint to fetch all data from the 'Weather Misc' collection
+#todo: add data in Weather Misc collection first.
+
+@app.route('/api/misc', methods=['GET'])
+
+def get_wildfires():
+    # Access the 'earthquakes' collection
+    weather_misc_collection = db['weather_misc']
+
+    # Use the find method on the collection to retrieve all data
+    weather_misc_data = weather_misc_collection.find({}, {'_id': 0})
+
+    # Convert the cursor to a list and jsonify the result
+    return jsonify(list(weather_misc_data))
 
 if __name__ == '__main__':
     app.run(debug=True)
