@@ -18,7 +18,7 @@ def connect_to_mongodb():
     db_host = os.getenv('DB_HOST', 'localhost')
     db_port = os.getenv('DB_PORT', '27017')
     db_name = os.getenv('DB_NAME', 'sample_database')
-    collection_name = os.getenv('COLLECTION_NAME', 'earthquakes')
+    collection_name = os.getenv('COLLECTION_NAME', 'wildfires')
     print("db_name: " + db_name, "collection_name: " + collection_name,"db_host: " + db_host, "db_port: "+(db_port))
                                                                     
     connection_string = (
