@@ -1,0 +1,29 @@
+{
+    "project_info": {
+      "project_number": "383689184067",
+      "project_id": "veracity-a7ee2",
+      "storage_bucket": "veracity-a7ee2.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:383689184067:android:a3724b5fccf3673d48d5f6",
+          "android_client_info": {
+            "package_name": "com.nandakishor.veracity"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyCOIpLlFsV9CkHG-Qe1PsYeFXATYi82mr4"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

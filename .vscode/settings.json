@@ -1,6 +1,3 @@
 {
-    "python.envFile": "${workspaceFolder}/.env",
-    "python.analysis.extraPaths": [
-        "${workspaceFolder}"
-    ]
+    "python.pythonPath": "${workspaceFolder}/venv/bin/python",  // Adjust the path accordingly
 }

@@ -1,3 +1,5 @@
 295_venv/
 .env
 venv/
+earthquake.json
+earthquake.log

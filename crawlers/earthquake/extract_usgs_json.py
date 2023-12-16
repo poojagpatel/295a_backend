@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
+import pdb
 import sys
 import os
 import json
 import logging
 from datetime import datetime, timedelta
 
-from utility import convert_unix_milliseconds_to_datetime
 import requests
 
 # Configure logging
@@ -14,15 +14,11 @@ logging.basicConfig(filename="earthquake.log", level=logging.INFO,
                     format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Calculate the start date for the new data (e.g., 1 day ago)
-start_date = datetime.now() - timedelta(days=1)
+start_date = datetime.now().date()
 start_date_str = start_date.strftime("%Y-%m-%dT%H:%M:%S")
 
-# Calculate the end date as the current date
-end_date = datetime.now()
-end_date_str = end_date.strftime("%Y-%m-%dT%H:%M:%S")
-
 # Define the API URL with the date range for new data
-api_url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date_str}&endtime={end_date_str}"
+api_url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date_str}"
 
 try:
     # Make the API request for new data
