@@ -32,7 +32,7 @@ async def main():
     client = connect_to_mongodb()
 
     db = client['ENDDB']
-    collection = db["weather_gov"]  # Replace with your actual collection name
+    collection = db["weather_misc"]  # Replace with your actual collection name
 
     # Use 'id' as '_id' in MongoDB for each feature
     for feature in data["features"]:
