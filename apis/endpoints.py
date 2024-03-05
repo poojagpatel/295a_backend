@@ -3,7 +3,7 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient, DESCENDING
 
-from utility import connect_to_mongodb
+from .utility import connect_to_mongodb
 
 from flask import request
 

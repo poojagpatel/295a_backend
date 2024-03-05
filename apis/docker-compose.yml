@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    image: docker pull swapnil3024/295_backend:1.3
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: endpoints.py
+      FLASK_ENV: development
+    command: ["flask", "run", "--host=0.0.0.0"]
