@@ -3,4 +3,6 @@
 venv/
 earthquake.json
 earthquake.log
+references/airflow_quickstart/airflow/logs/
+references/airflow_quickstart/airflow/standalone_admin_password.txt
 api_venv/

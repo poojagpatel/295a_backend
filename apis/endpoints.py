@@ -13,9 +13,21 @@ print("db client - ", client)
 db = client["ENDDB"]
 
 
-# Endpoint to fetch paginated data from the 'earthquakes' collection
 @app.route("/api/eq", methods=["GET"])
 def get_earthquakes():
+    """
+    Retrieves paginated earthquake data from the 'earthquakes' collection in the database.
+
+    Query Parameters:
+        page (int): The page number to retrieve. Defaults to 1.
+        page_size (int): The number of records per page. Defaults to 10.
+
+    Returns:
+        JSON: A list of earthquake data for the requested page, sorted by the 'updated' field in descending order.
+
+    Raises:
+        HTTP 500: If an exception occurs while retrieving the data.
+    """
     try:
         # Access the 'earthquakes' collection
         earthquakes_collection = db["earthquakes"]
@@ -48,6 +60,18 @@ def get_earthquakes():
 
 @app.route("/api/eq/<string:code>", methods=["GET"])
 def get_earthquake_by_code(code):
+    """
+    Retrieves an earthquake record from the 'earthquakes' collection in the database based on the given code.
+
+    Args:
+        code (str): The code of the earthquake record to retrieve.
+
+    Returns:
+        JSON: The earthquake record with the given code, or a message indicating that the earthquake was not found.
+
+    Raises:
+        HTTP 404: If no earthquake record was found with the given code.
+    """
     # Query MongoDB to find the earthquake record by code
     collection = db["earthquakes"]
     earthquake = collection.find_one({"properties.code": code})
@@ -63,6 +87,19 @@ def get_earthquake_by_code(code):
 
 @app.route("/api/wf", methods=["GET"])
 def get_wildfires():
+    """
+    Retrieves paginated wildfire data from the 'wildfires' collection in the database.
+
+    Query Parameters:
+        page (int): The page number to retrieve. Defaults to 1.
+        page_size (int): The number of records per page. Defaults to 10.
+
+    Returns:
+        JSON: A list of wildfire data for the requested page, sorted by the 'updated' field in descending order.
+
+    Raises:
+        HTTP 500: If an exception occurs while retrieving the data.
+    """
     try:
         # Access the 'Wildfire' collection
         wildfire_collection = db["wildfires"]
@@ -95,13 +132,23 @@ def get_wildfires():
 
 @app.route("/api/wf/<string:code>", methods=["GET"])
 def get_wildfire_by_code(code):
-    # Query MongoDB to find the earthquake record by code
+    """
+    Get wildfire information by code.
+
+    Args:
+        code (str): The unique identifier code of the wildfire.
+
+    Returns:
+        dict: The JSON response containing the wildfire information if found, or a message indicating that the wildfire was not found.
+
+    """
+    # Query MongoDB to find the wildfire record by code
     collection = db["wildfires"]
-    earthquake = collection.find_one({"properties.UniqueId": code})
-    if earthquake:
-        return jsonify(earthquake)
+    wildfire = collection.find_one({"properties.UniqueId": code})
+    if wildfire:
+        return jsonify(wildfire)
     else:
-        return jsonify({"message": "wildfires not found"}), 404
+        return jsonify({"message": "Wildfire not found"}), 404
 
 
 if __name__ == "__main__":
