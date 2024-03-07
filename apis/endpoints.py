@@ -3,11 +3,34 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient, DESCENDING
 
+
 from .utility import connect_to_mongodb
 
 from flask import request
 
 app = Flask(__name__)
+
+from flask_swagger_ui import get_swaggerui_blueprint
+from flasgger import Swagger
+
+swagger = Swagger(app)
+
+
+# Swagger UI setup
+SWAGGER_URL = "/api/docs"  # URL for exposing Swagger UI (without trailing '/')
+API_URL = "http://0.0.0.0:5000/static/swagger.json"  # Our API url (can be an URL)
+
+
+# Call factory function to create our blueprint
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,  # Swagger UI static files will be served at {SWAGGER_URL}/dist/
+    API_URL,
+    config={  # Swagger UI config overrides
+        "app_name": "Earthquake and Wildfire API"
+    },
+)
+
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
 client = connect_to_mongodb()
 print("db client - ", client)
@@ -18,17 +41,22 @@ db = client["ENDDB"]
 @app.route("/api/eq", methods=["GET"])
 def get_earthquakes():
     """
-    Retrieves paginated earthquake data from the 'earthquakes' collection in the database.
-
-    Query Parameters:
-        page (int): The page number to retrieve. Defaults to 1.
-        page_size (int): The number of records per page. Defaults to 10.
-
-    Returns:
-        JSON: A list of earthquake data for the requested page, sorted by the 'updated' field in descending order.
-
-    Raises:
-        HTTP 500: If an exception occurs while retrieving the data.
+    Retrieves paginated earthquake data
+    ---
+    parameters:
+      - name: page
+        in: query
+        type: integer
+        description: The page number to retrieve. Defaults to 1.
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of records per page. Defaults to 10.
+    responses:
+      200:
+        description: A list of earthquake data for the requested page, sorted by the 'updated' field in descending order.
+      500:
+        description: If an exception occurs while retrieving the data.
     """
     try:
         # Access the 'earthquakes' collection
@@ -63,16 +91,19 @@ def get_earthquakes():
 @app.route("/api/eq/<string:code>", methods=["GET"])
 def get_earthquake_by_code(code):
     """
-    Retrieves an earthquake record from the 'earthquakes' collection in the database based on the given code.
-
-    Args:
-        code (str): The code of the earthquake record to retrieve.
-
-    Returns:
-        JSON: The earthquake record with the given code, or a message indicating that the earthquake was not found.
-
-    Raises:
-        HTTP 404: If no earthquake record was found with the given code.
+    Retrieves an earthquake record based on the given code.
+    ---
+    parameters:
+      - name: code
+        in: path
+        type: string
+        required: true
+        description: The code of the earthquake record to retrieve.
+    responses:
+      200:
+        description: The earthquake record with the given code.
+      404:
+        description: If no earthquake record was found with the given code.
     """
     # Query MongoDB to find the earthquake record by code
     collection = db["earthquakes"]
@@ -91,16 +122,21 @@ def get_earthquake_by_code(code):
 def get_wildfires():
     """
     Retrieves paginated wildfire data from the 'wildfires' collection in the database.
-
-    Query Parameters:
-        page (int): The page number to retrieve. Defaults to 1.
-        page_size (int): The number of records per page. Defaults to 10.
-
-    Returns:
-        JSON: A list of wildfire data for the requested page, sorted by the 'updated' field in descending order.
-
-    Raises:
-        HTTP 500: If an exception occurs while retrieving the data.
+    ---
+    parameters:
+      - name: page
+        in: query
+        type: integer
+        description: The page number to retrieve. Defaults to 1.
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of records per page. Defaults to 10.
+    responses:
+      200:
+        description: A list of wildfire data for the requested page, sorted by the 'updated' field in descending order.
+      500:
+        description: If an exception occurs while retrieving the data.
     """
     try:
         # Access the 'Wildfire' collection
@@ -135,14 +171,19 @@ def get_wildfires():
 @app.route("/api/wf/<string:code>", methods=["GET"])
 def get_wildfire_by_code(code):
     """
-    Get wildfire information by code.
-
-    Args:
-        code (str): The unique identifier code of the wildfire.
-
-    Returns:
-        dict: The JSON response containing the wildfire information if found, or a message indicating that the wildfire was not found.
-
+    Retrieves a wildfire record based on the given code.
+    ---
+    parameters:
+      - name: code
+        in: path
+        type: string
+        required: true
+        description: The code of the wildfire record to retrieve.
+    responses:
+      200:
+        description: The wildfire record with the given code.
+      404:
+        description: If no wildfire record was found with the given code.
     """
     # Query MongoDB to find the wildfire record by code
     collection = db["wildfires"]
