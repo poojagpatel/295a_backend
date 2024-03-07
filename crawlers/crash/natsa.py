@@ -11,7 +11,7 @@ params = {
         "dateFilter": "Year",
         "showIncapacitatedCount": "true",
         "dateYear": "2023",  # You can adjust the year as needed
-    }
+    },
 }
 
 # Make the API request
@@ -26,5 +26,4 @@ if response.status_code == 200:
     for crash in latest_crashes:
         print(crash)
 else:
-    print(
-        f"Failed to retrieve crash data. Status code: {response.status_code}")
+    print(f"Failed to retrieve crash data. Status code: {response.status_code}")
