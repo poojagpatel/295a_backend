@@ -10,8 +10,11 @@ from datetime import datetime, timedelta
 import requests
 
 # Configure logging
-logging.basicConfig(filename="earthquake.log", level=logging.INFO,
-                    format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    filename="earthquake.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
 
 # Calculate the start date for the new data (e.g., 1 day ago)
 start_date = datetime.now().date()
@@ -33,12 +36,12 @@ try:
         for feature in new_earthquake_data["features"]:
             timestamp_in_milliseconds = feature["properties"]["time"]
             timestamp_in_seconds = timestamp_in_milliseconds / 1000.0
-            feature["properties"]["time"] = datetime.fromtimestamp(
-                timestamp_in_seconds)
+            feature["properties"]["time"] = datetime.fromtimestamp(timestamp_in_seconds)
 
         # Sort the new data in descending order based on time (latest first)
         new_earthquake_data["features"].sort(
-            key=lambda x: x["properties"]["time"], reverse=True)
+            key=lambda x: x["properties"]["time"], reverse=True
+        )
 
         # Update the last update date in the "metadata" section
         new_last_updated = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
@@ -53,8 +56,7 @@ try:
         # Logging success
         logging.info("New earthquake data appended to earthquake.json")
     else:
-        print(
-            f"Failed to retrieve new data. Status code: {response.status_code}")
+        print(f"Failed to retrieve new data. Status code: {response.status_code}")
 except Exception as e:
     # Logging an error if any exception occurs
     logging.error(f"An error occurred: {str(e)}")
