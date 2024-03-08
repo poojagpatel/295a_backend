@@ -193,6 +193,15 @@ def get_wildfire_by_code(code):
     else:
         return jsonify({"message": "Wildfire not found"}), 404
 
+def get_weather_misc():
+    # Access the 'earthquakes' collection
+    weather_misc_collection = db['weather_misc']
 
-if __name__ == "__main__":
+    # Use the find method on the collection to retrieve all data
+    weather_misc_data = weather_misc_collection.find({}, {'_id': 0})
+
+    # Convert the cursor to a list and jsonify the result
+    return jsonify(list(weather_misc_data))
+
+if __name__ == '__main__':
     app.run(debug=True)
