@@ -2,6 +2,7 @@
 
 from flask import Flask, jsonify
 from pymongo import MongoClient, DESCENDING
+from flask_cors import CORS
 
 
 from .utility import connect_to_mongodb
@@ -9,6 +10,7 @@ from .utility import connect_to_mongodb
 from flask import request
 
 app = Flask(__name__)
+CORS(app)  # This will enable CORS for all routes
 
 from flask_swagger_ui import get_swaggerui_blueprint
 from flasgger import Swagger
@@ -193,15 +195,82 @@ def get_wildfire_by_code(code):
     else:
         return jsonify({"message": "Wildfire not found"}), 404
 
+
+@app.route("/api/weather", methods=["GET"])
 def get_weather_misc():
-    # Access the 'earthquakes' collection
-    weather_misc_collection = db['weather_misc']
+    """
+    Retrieves paginated weather data from the 'weather_misc' collection in the database.
+    ---
+    parameters:
+        - in: query
+          name: page
+          type: integer
+          description: The page number to retrieve. Defaults to 1.
+        - in: query
+          name: page_size
+          type: integer
+          description: The number of records per page. Defaults to 10.
+    responses:
+        200:
+            description: A list of weather data for the requested page, sorted by the 'effective' field in descending order.
+        500:
+            description: If an exception occurs while retrieving the data.
+    """
+    try:
+        # Access the 'weather_misc' collection
+        weather_misc_collection = db["weather_misc"]
 
-    # Use the find method on the collection to retrieve all data
-    weather_misc_data = weather_misc_collection.find({}, {'_id': 0})
+        # Pagination parameters
+        page = int(request.args.get("page", 1))  # Default page is 1
+        page_size = int(request.args.get("page_size", 10))  # Default page size is 10
 
-    # Convert the cursor to a list and jsonify the result
-    return jsonify(list(weather_misc_data))
+        # Calculate skip value based on page number and page size
+        skip = (page - 1) * page_size
 
-if __name__ == '__main__':
+        # Use the find method on the collection to retrieve paginated data
+        # Sort the data based on the 'updated' field in descending order
+        weather_misc_data = (
+            weather_misc_collection.find({}, {"_id": 0})
+            .sort("properties.effective", DESCENDING)
+            .skip(skip)
+            .limit(page_size)
+        )
+
+        # Convert the cursor to a list and jsonify the result
+        result = list(weather_misc_data)
+
+        return jsonify(result)
+
+    except Exception as e:
+        # Handle exceptions and return an appropriate error response
+        return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
+
+
+@app.route("/api/weather/<string:code>", methods=["GET"])
+def get_weather_by_code(code):
+    """
+    Retrieves a weather record based on the given code.
+    ---
+    parameters:
+        - name: code
+          in: path
+          type: string
+          required: true
+          description: The code of the weather record to retrieve.
+    responses:
+        200:
+            description: The weather record with the given code.
+        404:
+            description: If no weather record was found with the given code.
+    """
+    # Query MongoDB to find the weather record by code
+    weather_misc_collection = db["weather_misc"]
+    weather = weather_misc_collection.find_one({"properties.id": code})
+    if weather:
+        return jsonify(weather)
+    else:
+        return jsonify({"message": "Weather record not found"}), 404
+
+
+if __name__ == "__main__":
     app.run(debug=True)
