@@ -101,3 +101,4 @@ validators==0.22.0
 Werkzeug==3.0.1
 yarl==1.9.2
 zipp==3.17.0
+firebase-admin==6.4.0
