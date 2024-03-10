@@ -4,6 +4,18 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 import json
 
+
+from flask import Flask, jsonify
+from flask_cors import CORS
+from flask import request
+
+# Initialize flask app
+app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)  
+
+
 # configure the enviroment with open ai api key
 load_dotenv()
 
@@ -26,50 +38,39 @@ def get_response(query, incident_data):
         "incident_data": incident_data,
         "user_question": query
         }
-    )
+    ) 
 
-data = """{
-  "_id": "nc74013551",
-  "geometry": {
-    "coordinates": [
-      -122.7259979,
-      38.7803345,
-      1.05
-    ],
-    "type": "Point"
-  },
-  "properties": {
-    "alert": null,
-    "cdi": null,
-    "code": "74013551",
-    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc74013551&format=geojson",
-    "dmin": 0.008871,
-    "felt": null,
-    "gap": 47,
-    "ids": ",nc74013551,",
-    "mag": 2.21,
-    "magType": "md",
-    "mmi": null,
-    "net": "nc",
-    "nst": 48,
-    "place": "3 km E of The Geysers, CA",
-    "rms": 0.08,
-    "sig": 75,
-    "sources": ",nc,",
-    "status": "automatic",
-    "time": "2024-03-07 22:37:00.480000",
-    "title": "M 2.2 - 3 km E of The Geysers, CA",
-    "tsunami": 0,
-    "type": "earthquake",
-    "types": ",focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
-    "tz": null,
-    "updated": 1709880023997,
-    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc74013551"
-  },
-  "type": "Feature"
-}"""
 
-json_data = json.loads(data)
-query = 'can you give me a brief summary about this incident?'
-response = get_response(query, data)
-print(response)
+@app.route("/api/chat", methods=["POST"])
+def get_chat_response():
+    """
+    Retrieves paginated weather data from the 'weather_misc' collection in the database.
+    ---
+    parameters:
+        - in: body
+          incident: json
+          query: string
+    responses:
+        200:
+            description: Response to the user query from OpenAI LLM
+        500:
+            description: If an exception occurs while retrieving the result.
+    """
+    try:
+        data = request.json
+        incident_data = data['incident']
+        query = data['query']
+
+        chat_result = get_response(query, incident_data)
+        response = {
+          'result': chat_result
+        }
+
+        return jsonify(response), 200
+
+    except Exception as e:
+          # Handle exceptions and return an appropriate error response
+          return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
+      
+if __name__ == "__main__":
+    app.run(debug=True)
