@@ -3,17 +3,25 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient, DESCENDING
 from flask_cors import CORS
-
+import os
+import openai
+from dotenv import load_dotenv
 
 from .utility import connect_to_mongodb
 
 from flask import request
 
-app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
-
 from flask_swagger_ui import get_swaggerui_blueprint
 from flasgger import Swagger
+
+
+load_dotenv()
+app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = 32 * 1024 * 1024  # 32 MB
+
+CORS(app)  # This will enable CORS for all routes
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 swagger = Swagger(app)
 
@@ -35,7 +43,6 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
 client = connect_to_mongodb()
-print("db client - ", client)
 
 db = client["ENDDB"]
 
@@ -270,6 +277,63 @@ def get_weather_by_code(code):
         return jsonify(weather)
     else:
         return jsonify({"message": "Weather record not found"}), 404
+
+
+@app.route("/api/event_chat", methods=["POST"])
+def chat_with_event():
+    """
+    Initiate a chat about an event using OpenAI's API.
+    ---
+    parameters:
+        - in: body
+          name: event
+          description: The event to chat about.
+          required: true
+          schema:
+            type: object
+            properties:
+                event:
+                    type: object
+                    description: The data of the event.
+                question:
+                    type: string
+                    description: The question to ask about the event.
+    responses:
+        200:
+            description: Chat response with the event.
+    """
+    data = request.get_json()
+    event = data.get("event")
+    question = data.get("question")
+    # ... rest of your code ...
+    try:
+        if event:
+            # Use OpenAI's API to generate a response based on the prompt
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": f"give answers to the questions from {event} data in 60 words or less",
+                    },
+                    {"role": "user", "content": question},
+                ],
+            )
+
+            # Extract the chat response from the OpenAI API response
+            chat_response = response["choices"][0]["message"]["content"]
+
+            # Return the chat response
+            return jsonify({"chat_response": chat_response}), 200
+        else:
+            # If no event is found in the database with the provided event ID, return a 404 error
+            return jsonify(
+                {"error": "No event found in the database with the provided event ID"}
+            ), 404
+
+    except Exception as e:
+        # Handle exceptions and return an error response
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
