@@ -362,10 +362,15 @@ def ask():
     if not question:
         return jsonify({"error": "No question provided"}), 400
 
-    vectordb = Chroma(
-        embedding_function=OpenAIEmbeddings(), persist_directory="../chroma_store"
-    )
+    import chromadb
 
+    chroma_client = chromadb.HttpClient(host="13.58.222.32", port=8000)
+
+    vectordb = Chroma(
+        client=chroma_client,
+        collection_name="langchain",
+        embedding_function=OpenAIEmbeddings(),
+    )
     op = get_conversation_chain(vectordb)
     response = op({"question": question})
 
