@@ -1,7 +1,7 @@
 import json
 from pymongo import MongoClient, UpdateOne
 
-from utility import async_send_firebase_notification, connect_to_mongodb
+from apis.utility import async_send_firebase_notification, connect_to_mongodb
 
 # from utility import async_send_firebase_notification, connect_to_mongodb
 
