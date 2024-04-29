@@ -16,6 +16,7 @@ from flasgger import Swagger
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 
+from openai import OpenAI
 
 load_dotenv()
 app = Flask(__name__)
@@ -311,7 +312,18 @@ def chat_with_event():
     try:
         if event:
             # Use OpenAI's API to generate a response based on the prompt
-            response = openai.ChatCompletion.create(
+            # response = openai.ChatCompletion.create(
+            #     model="gpt-3.5-turbo",
+            #     messages=[
+            #         {
+            #             "role": "system",
+            #             "content": f"give answers to the questions from {event} data in 60 words or less",
+            #         },
+            #         {"role": "user", "content": question},
+            #     ],
+            # )
+            client = OpenAI()
+            response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {
@@ -338,7 +350,7 @@ def chat_with_event():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/ask", methods=["POST"])
+@app.route("/api/ask", methods=["POST"])
 def ask():
     """
     Ask a question
@@ -364,7 +376,7 @@ def ask():
 
     import chromadb
 
-    chroma_client = chromadb.HttpClient(host="13.58.222.32", port=8000)
+    chroma_client = chromadb.HttpClient(host=os.getenv("DB_HOST"), port=8000)
 
     vectordb = Chroma(
         client=chroma_client,
@@ -378,4 +390,4 @@ def ask():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
