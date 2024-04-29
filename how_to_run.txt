@@ -1,0 +1,9 @@
+application walkthrough
+
+1.creawlers>earthquake
+    extract
+    load
+2.creawlers>weather
+    extract
+    load
+3.embeddings.py

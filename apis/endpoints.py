@@ -7,12 +7,14 @@ import os
 import openai
 from dotenv import load_dotenv
 
-from .utility import connect_to_mongodb
+from utility import connect_to_mongodb, get_conversation_chain
 
 from flask import request
 
 from flask_swagger_ui import get_swaggerui_blueprint
 from flasgger import Swagger
+from langchain_chroma import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 
 load_dotenv()
@@ -334,6 +336,40 @@ def chat_with_event():
     except Exception as e:
         # Handle exceptions and return an error response
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/ask", methods=["POST"])
+def ask():
+    """
+    Ask a question
+    ---
+    parameters:
+        - name: question
+          in: body
+          type: string
+          required: true
+          description: The question to ask
+    responses:
+        200:
+            description: The answer to the question
+            schema:
+                type: object
+                properties:
+                    answer:
+                        type: string
+    """
+    question = request.json.get("question")
+    if not question:
+        return jsonify({"error": "No question provided"}), 400
+
+    vectordb = Chroma(
+        embedding_function=OpenAIEmbeddings(), persist_directory="../chroma_store"
+    )
+
+    op = get_conversation_chain(vectordb)
+    response = op({"question": question})
+
+    return jsonify({"answer": response["answer"]})
 
 
 if __name__ == "__main__":

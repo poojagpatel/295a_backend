@@ -3,6 +3,8 @@ from pymongo import MongoClient, UpdateOne
 
 from utility import connect_to_mongodb
 
+# Run the asynchronous function
+import asyncio
 
 # from utility import async_send_firebase_notification, connect_to_mongodb
 
@@ -43,14 +45,10 @@ async def main():
     for feature in data["features"]:
         feature["_id"] = feature["id"]
         del feature["id"]  # Remove the original 'id' field
-
     # Insert data into MongoDB using bulk operations
     await update_or_insert_earthquakes_async(data["features"], collection)
 
     print("Data inserted into MongoDB.")
 
-
-# Run the asynchronous function
-import asyncio
 
 asyncio.run(main())
