@@ -6,4 +6,8 @@ application walkthrough
 2.creawlers>weather
     extract
     load
-3.embeddings.py
+3.creawlers>wildfire
+    extract
+    load
+4.embeddings.py
+
