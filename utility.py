@@ -1,4 +1,3 @@
-from calendar import c
 import datetime
 import chromadb
 from dotenv import load_dotenv
@@ -50,22 +49,6 @@ def connect_to_mongodb():
     return client
 
 
-def create_record_embeddings(record):
-    client = ChatOpenAI()
-
-    response = client.embeddings.create(
-        model="text-embedding-ada-002",
-        input=record,
-        encoding_format="float",
-    )
-
-    if response:
-        return response.data[0].embedding
-    else:
-        print("Error:", response)
-        return None
-
-
 def get_ids_from_collection(collection_name):
     client = connect_to_mongodb()
     db = client["ENDDB"]
@@ -101,6 +84,8 @@ def get_id_from_document(doc_type, document):
         return page_content.get("id", None)
     elif doc_type == "weather":
         return page_content.get("properties").get("id", None)
+    elif doc_type == "wildfire":
+        return page_content.get("properties").get("UniqueId", None)
     else:
         return None
 

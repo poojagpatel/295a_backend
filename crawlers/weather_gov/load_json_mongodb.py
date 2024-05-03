@@ -44,7 +44,7 @@ async def main():
     # Insert data into MongoDB using bulk operations
     await update_or_insert_earthquakes_async(data["features"], collection)
 
-    print("Data inserted into MongoDB.")
+    print("Weather Data inserted into MongoDB.")
 
 
 # Run the asynchronous function

@@ -17,11 +17,19 @@ import json
 
 
 # create_store_embeddings()
+# vectordb = Chroma(
+#     embedding_function=OpenAIEmbeddings(), persist_directory="./chroma_store"
+# )
+
+chroma_client = chromadb.HttpClient(host="13.58.222.32", port=8000)
 vectordb = Chroma(
-    embedding_function=OpenAIEmbeddings(), persist_directory="./chroma_store"
+    client=chroma_client,
+    embedding_function=OpenAIEmbeddings(),
 )
 
-op = get_conversation_chain(vectordb)
+op = vectordb.similarity_search("earthquake", 5)
+print(op)
+# op = get_conversation_chain(vectordb)
 
-response = op({"question": "give me some weather info from california  "})
-print(response["answer"])
+# response = op({"question": "give me some earthquake results from california  "})
+# print(response["answer"])
