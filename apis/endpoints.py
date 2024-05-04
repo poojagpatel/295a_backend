@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, jsonify
-from pymongo import MongoClient, DESCENDING
+from pymongo import ASCENDING, MongoClient, DESCENDING
 from flask_cors import CORS
 import os
 import openai
@@ -100,6 +100,72 @@ def get_earthquakes():
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
 
 
+
+
+@app.route("/api/eq_by_time", methods=["GET"])
+def get_earthquakes_by_time():
+    """
+    Retrieves paginated earthquake data
+    ---
+    parameters:
+      - name: page
+        in: query
+        type: integer
+        description: The page number to retrieve. Defaults to 1.
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of records per page. Defaults to 10.
+      - start_time:
+        in: query
+        type: string
+        description: The start time from which the records need to be retrieved.
+      - end_time:
+        in: query
+        type: string
+        description: The end time from which the records need to be retrieved.
+    responses:
+      200:
+        description: A list of earthquake data for the requested page, sorted by the 'updated' field in descending order.
+      500:
+        description: If an exception occurs while retrieving the data.
+    """
+    try:
+        # Access the 'earthquakes' collection
+        earthquakes_collection = db["earthquakes"]
+
+        # Pagination parameters
+        page = int(request.args.get("page", 1))  # Default page is 1
+        page_size = int(request.args.get("page_size", 10))  # Default page size is 10
+
+        # Calculate skip value based on page number and page size
+        skip = (page - 1) * page_size
+
+        # Use the find method on the collection to retrieve paginated data
+        # Sort the data based on the 'updated' field in descending order
+        earthquakes_data = (
+            earthquakes_collection.find({
+                "properties.time" :{
+                    "$gte": str(request.args.get("start_time", '2024-05-02 08:00:00')),
+                    "$lte": str(request.args.get("end_time", '2024-05-02 09:00:00'))
+                }
+            })
+            .sort("properties.time", ASCENDING)
+            .skip(skip)
+            .limit(page_size)
+        )
+
+        # Convert the cursor to a list and jsonify the result
+        result = list(earthquakes_data)
+
+        return jsonify(result)
+
+    except Exception as e:
+        # Handle exceptions and return an appropriate error response
+        return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
+
+
+
 @app.route("/api/eq/<string:code>", methods=["GET"])
 def get_earthquake_by_code(code):
     """
@@ -173,6 +239,68 @@ def get_wildfires():
         # Convert the cursor to a list and jsonify the result
         result = list(wildfire_data)
 
+        return jsonify(result)
+
+    except Exception as e:
+        # Handle exceptions and return an appropriate error response
+        return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
+
+
+
+@app.route("/api/wf_by_time", methods=["GET"])
+def get_wildfires_by_time():
+    """
+    Retrieves paginated earthquake data
+    ---
+    parameters:
+      - name: page
+        in: query
+        type: integer
+        description: The page number to retrieve. Defaults to 1.
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of records per page. Defaults to 10.
+      - start_time:
+        in: query
+        type: string
+        description: The start time from which the records need to be retrieved.
+      - end_time:
+        in: query
+        type: string
+        description: The end time from which the records need to be retrieved.
+    responses:
+      200:
+        description: A list of earthquake data for the requested page, sorted by the 'updated' field in descending order.
+      500:
+        description: If an exception occurs while retrieving the data.
+    """
+    try:
+        # Access the 'Wildfire' collection
+        wildfire_collection = db["wildfires"]
+
+        # Pagination parameters
+        page = int(request.args.get("page", 1))  # Default page is 1
+        page_size = int(request.args.get("page_size", 10))  # Default page size is 10
+
+        # Calculate skip value based on page number and page size
+        skip = (page - 1) * page_size
+
+        # Use the find method on the collection to retrieve paginated data
+        # Sort the data based on the 'updated' field in ascending order
+        wildfires_data = (
+            wildfire_collection.find({
+                "properties.Updated" :{
+                    "$gte": str(request.args.get("start_time",'2024-05-03T12:10:48Z')),
+                    "$lte": str(request.args.get("end_time", '2024-05-03T13:50:48Z'))
+                }
+            })
+            .sort("properties.Updated", ASCENDING)
+            .skip(skip)
+            .limit(page_size)
+        )
+        # Convert the cursor to a list and jsonify the result
+        result = list(wildfires_data)
         return jsonify(result)
 
     except Exception as e:
@@ -254,6 +382,71 @@ def get_weather_misc():
     except Exception as e:
         # Handle exceptions and return an appropriate error response
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
+
+
+
+@app.route("/api/wt_by_time", methods=["GET"])
+def get_weather_by_time():
+    """
+    Retrieves paginated earthquake data
+    ---
+    parameters:
+      - name: page
+        in: query
+        type: integer
+        description: The page number to retrieve. Defaults to 1.
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of records per page. Defaults to 10.
+      - start_time:
+        in: query
+        type: string
+        description: The start time from which the records need to be retrieved.
+      - end_time:
+        in: query
+        type: string
+        description: The end time from which the records need to be retrieved.
+    responses:
+      200:
+        description: A list of earthquake data for the requested page, sorted by the 'updated' field in descending order.
+      500:
+        description: If an exception occurs while retrieving the data.
+    """
+    try:
+        # Access the 'Wildfire' collection
+        weather_collection = db["weather_misc"]
+
+        # Pagination parameters
+        page = int(request.args.get("page", 1))  # Default page is 1
+        page_size = int(request.args.get("page_size", 10))  # Default page size is 10
+
+        # Calculate skip value based on page number and page size
+        skip = (page - 1) * page_size
+
+        # Use the find method on the collection to retrieve paginated data
+        # Sort the data based on the 'updated' field in ascending order
+        weather_data = (
+            weather_collection.find({
+                "properties.sent" :{
+                    "$gte": str(request.args.get("start_time",'2024-04-29T15:00:00')),
+                    "$lte": str(request.args.get("end_time", '2024-04-29T16:00:00'))
+                }
+            })
+            .sort("properties.sent", ASCENDING)
+            .skip(skip)
+            .limit(page_size)
+        )
+        # Convert the cursor to a list and jsonify the result
+        result = list(weather_data)
+        return jsonify(result)
+
+    except Exception as e:
+        # Handle exceptions and return an appropriate error response
+        return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
+
+
+
 
 
 @app.route("/api/weather/<string:code>", methods=["GET"])
@@ -387,6 +580,7 @@ def ask():
     response = op({"question": question})
 
     return jsonify({"answer": response["answer"]})
+
 
 
 if __name__ == "__main__":
