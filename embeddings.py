@@ -4,6 +4,7 @@ from utility import get_id_from_document
 from langchain_chroma import Chroma
 import chromadb
 from langchain_community.document_loaders import JSONLoader
+import os
 
 
 def create_store_eq1_embeddings():
@@ -21,7 +22,7 @@ def create_store_eq1_embeddings():
         embedding=OpenAIEmbeddings(),
         ids=ids,
     )
-    print("earthquake data inserted", len(documents))
+    print("\n\n earthquake embeddings data inserted", len(documents))
     return vectordb
 
 
@@ -40,7 +41,7 @@ def create_store_we_embeddings():
         embedding=OpenAIEmbeddings(),
         ids=ids,
     )
-    print("weather data inserted", len(documents))
+    print("\n\nweather embeddings data inserted", len(documents))
     return vectordb
 
 
@@ -59,15 +60,15 @@ def create_store_wf_embeddings():
         embedding=OpenAIEmbeddings(),
         ids=ids,
     )
-    print("wildfire data inserted", len(documents))
+    print("n\n wildfire embeddings data inserted", len(documents))
     return vectordb
 
 
 if __name__ == "__main__":
-    chroma_client = chromadb.HttpClient(host="13.58.222.32", port=8000)
+    chroma_client = chromadb.HttpClient(host=os.getenv("DB_HOST"), port=8000)
     create_store_eq1_embeddings()
     print("created earthquake embeddings")
-    create_store_we_embeddings()
-    print("created weather embeddings")
+    # create_store_we_embeddings()
+    # print("created weather embeddings")
     create_store_wf_embeddings()
     print("created wildfire embeddings")

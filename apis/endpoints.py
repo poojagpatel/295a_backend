@@ -85,7 +85,7 @@ def get_earthquakes():
         # Sort the data based on the 'updated' field in descending order
         earthquakes_data = (
             earthquakes_collection.find({}, {"_id": 0})
-            .sort("properties.updated", DESCENDING)
+            .sort("properties.time", DESCENDING)
             .skip(skip)
             .limit(page_size)
         )
