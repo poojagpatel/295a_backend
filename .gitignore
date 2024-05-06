@@ -8,3 +8,5 @@ references/airflow_quickstart/airflow/standalone_admin_password.txt
 api_venv/
 .DS_Store
 chroma_store/
+firebase_utilities/emergency-news-delivery-firebase-adminsdk-2tiy5-34f226f552-copy1.json
+/apis/__pycache__/
