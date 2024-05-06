@@ -89,3 +89,112 @@
 2024-04-30 00:42:58,546 - INFO - New earthquake data appended to earthquake.json
 2024-04-30 00:44:12,875 - INFO - New earthquake data appended to earthquake.json
 2024-04-30 00:44:55,166 - INFO - New earthquake data appended to earthquake.json
+2024-05-02 21:38:40,164 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 22:41:05,991 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:11:54,315 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:19:26,754 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:19:43,696 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:19:50,566 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:19:55,404 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:21:49,353 - ERROR - An error occurred: 
+2024-05-03 23:22:07,177 - ERROR - An error occurred: 
+2024-05-03 23:22:12,988 - ERROR - An error occurred: 
+2024-05-03 23:22:39,616 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:23:04,920 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:23:13,539 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:23:20,881 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:26:45,587 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:27:00,243 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:37:09,816 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:37:49,922 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:37:57,733 - ERROR - An error occurred: list index out of range
+2024-05-03 23:39:07,836 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:45:26,027 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:45:49,429 - ERROR - An error occurred: name 'timezone' is not defined
+2024-05-03 23:46:02,151 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:46:13,430 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:46:22,681 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:48:51,439 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:49:32,585 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:50:02,882 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:57:51,821 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:58:00,793 - ERROR - An error occurred: can't compare offset-naive and offset-aware datetimes
+2024-05-03 23:58:20,239 - ERROR - An error occurred: 'lastUpdated'
+2024-05-03 23:58:47,826 - INFO - New earthquake data appended to earthquake.json
+2024-05-03 23:59:12,479 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 00:01:55,473 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 00:06:09,191 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:39:50,944 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:40:07,585 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:40:56,274 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:12,698 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:13,944 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:27,236 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:30,727 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:31,685 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:32,414 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:33,090 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:33,670 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:34,175 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:34,687 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:35,174 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:35,586 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:36,113 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:36,569 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:41:37,177 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:42:03,917 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:42:06,155 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:42:07,491 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:42:08,432 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 01:44:00,455 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 02:06:37,373 - INFO - New earthquake data appended to earthquake.json
+2024-05-04 02:09:50,026 - ERROR - An error occurred: 
+2024-05-04 02:09:57,027 - ERROR - An error occurred: 
+2024-05-04 02:10:19,522 - ERROR - An error occurred: Expecting value: line 1 column 1 (char 0)
+2024-05-04 02:11:25,124 - ERROR - An error occurred: 
+2024-05-04 02:14:52,862 - ERROR - An error occurred: 
+2024-05-04 02:17:30,575 - ERROR - An error occurred: 
+2024-05-04 02:17:50,298 - ERROR - An error occurred: 
+2024-05-04 02:18:08,875 - ERROR - An error occurred: 
+2024-05-04 02:19:23,359 - ERROR - An error occurred: 
+2024-05-04 02:19:58,304 - ERROR - An error occurred: 
+2024-05-04 02:20:06,312 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:20:48,528 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:23:00,541 - ERROR - An error occurred: 
+2024-05-04 02:25:48,131 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:29:27,979 - ERROR - An error occurred: 
+2024-05-04 02:29:58,458 - ERROR - An error occurred: 
+2024-05-04 02:29:59,727 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:30:18,442 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:30:22,048 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:31:34,286 - ERROR - An error occurred: 
+2024-05-04 02:31:37,070 - ERROR - An error occurred: list indices must be integers or slices, not str
+2024-05-04 02:33:00,055 - ERROR - An error occurred: 
+2024-05-04 02:34:56,272 - ERROR - An error occurred: 
+2024-05-04 02:38:08,944 - ERROR - An error occurred: 
+2024-05-04 02:38:10,030 - ERROR - An error occurred: 'features'
+2024-05-04 02:39:25,696 - ERROR - An error occurred: 
+2024-05-04 02:39:39,431 - ERROR - An error occurred: a number is required
+2024-05-04 02:40:18,383 - ERROR - An error occurred: a number is required
+2024-05-04 02:40:30,234 - ERROR - An error occurred: a number is required
+2024-05-04 02:41:08,521 - ERROR - An error occurred: time data '2024-05-04T000:40:30' does not match format '%Y-%m-%dT%H:%M:%S'
+2024-05-04 02:41:17,248 - ERROR - An error occurred: time data '2024-05-04T012:40:30' does not match format '%Y-%m-%dT%H:%M:%S'
+2024-05-04 02:41:32,278 - ERROR - An error occurred: a number is required
+2024-05-04 03:01:35,403 - ERROR - An error occurred: a number is required
+2024-05-04 03:02:04,572 - ERROR - An error occurred: a number is required
+2024-05-04 03:03:33,937 - ERROR - An error occurred: a number is required
+2024-05-04 03:04:42,229 - ERROR - An error occurred: a number is required
+2024-05-04 03:06:13,872 - ERROR - An error occurred: a number is required
+2024-05-04 03:06:31,560 - ERROR - An error occurred: a number is required
+2024-05-04 03:07:04,221 - ERROR - An error occurred: a number is required
+2024-05-04 03:17:09,386 - ERROR - An error occurred: a number is required
+2024-05-04 03:17:35,278 - ERROR - An error occurred: a number is required
+2024-05-04 03:17:48,679 - ERROR - An error occurred: a number is required
+2024-05-04 14:47:23,566 - ERROR - An error occurred: a number is required
+2024-05-04 22:13:08,272 - ERROR - An error occurred: a number is required
+2024-05-05 02:53:09,198 - ERROR - An error occurred: a number is required
+2024-05-05 13:40:24,334 - ERROR - An error occurred: a number is required
+2024-05-05 14:00:34,421 - ERROR - An error occurred: a number is required
+2024-05-05 14:03:36,224 - ERROR - An error occurred: a number is required
+2024-05-05 14:04:46,751 - ERROR - An error occurred: a number is required
+2024-05-05 14:31:57,560 - ERROR - An error occurred: a number is required

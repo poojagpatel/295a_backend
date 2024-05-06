@@ -7,10 +7,10 @@ python load_json_mongodb.py
 cd ../..
 
 # Step 2: Weather
-cd crawlers/weather_gov
-python extract_weather_json.py
-python load_json_mongodb.py
-cd ../..
+# cd crawlers/weather_gov
+# python extract_weather_json.py
+# python load_json_mongodb.py
+# cd ../..
 
 # Step 3: Wildfire
 cd crawlers/wildfire

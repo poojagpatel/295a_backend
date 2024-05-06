@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from itertools import count
 import pdb
 import sys
 import os
@@ -24,6 +25,12 @@ start_date_str = start_date.strftime("%Y-%m-%dT%H:%M:%S")
 api_url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date_str}"
 
 try:
+    with open("earthquake.json", "r") as file:
+        data = json.load(file)
+        last_updated = datetime.strptime(
+            data["metadata"]["lastUpdated"], "%Y-%m-%dT%H:%M:%S"
+        )
+
     # Make the API request for new data
     response = requests.get(api_url)
 
@@ -32,26 +39,43 @@ try:
         # Parse the JSON response for new data
         new_earthquake_data = response.json()
 
-        # Convert Unix epoch milliseconds timestamps to datetime objects
-        for feature in new_earthquake_data["features"]:
+        filtered_data = {}
+
+        filtered_data["features"] = [
+            record
+            for record in new_earthquake_data["features"]
+            if datetime.fromtimestamp(record["properties"]["time"] / 1000)
+            > last_updated
+        ]
+        # Update the last update date in the "metadata" section
+        new_last_updated = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        filtered_data["metadata"] = {}
+        filtered_data["type"] = "FeatureCollection"
+        filtered_data["metadata"]["lastUpdated"] = new_last_updated
+        filtered_data["metadata"]["url"] = api_url
+        filtered_data["metadata"]["title"] = "USGS Earthquakes"
+        filtered_data["metadata"]["status"] = 200
+        filtered_data["metadata"]["count"] = len(filtered_data["features"])
+
+        # # Convert Unix epoch milliseconds timestamps to datetime objects
+        for feature in filtered_data["features"]:
             timestamp_in_milliseconds = feature["properties"]["time"]
             timestamp_in_seconds = timestamp_in_milliseconds / 1000.0
             feature["properties"]["time"] = datetime.fromtimestamp(timestamp_in_seconds)
 
         # Sort the new data in descending order based on time (latest first)
-        new_earthquake_data["features"].sort(
+        filtered_data["features"].sort(
             key=lambda x: x["properties"]["time"], reverse=True
         )
 
-        # Update the last update date in the "metadata" section
-        new_last_updated = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        new_earthquake_data["metadata"]["lastUpdated"] = new_last_updated
-
         # Save the new data to a JSON file
         with open("earthquake.json", "w") as json_file:
-            json.dump(new_earthquake_data, json_file, default=str, indent=4)
+            json.dump(filtered_data, json_file, default=str, indent=4)
 
-        print(f"New earthquake data saved to earthquake.json (latest first)")
+        print(
+            "New earthquake data saved to earthquake.",
+            count(filtered_data["features"]),
+        )
 
         # Logging success
         logging.info("New earthquake data appended to earthquake.json")

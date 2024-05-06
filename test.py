@@ -6,9 +6,7 @@ from openai import OpenAI
 
 from crawlers import earthquake
 from utility import (
-    create_record_embeddings,
     get_conversation_chain,
-    get_ids_from_collection,
 )
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import JSONLoader
@@ -21,15 +19,22 @@ import json
 #     embedding_function=OpenAIEmbeddings(), persist_directory="./chroma_store"
 # )
 
-chroma_client = chromadb.HttpClient(host="13.58.222.32", port=8000)
+print(os.getenv("DB_HOST"))
+chroma_client = chromadb.HttpClient(
+    host=os.getenv("DB_HOST"),
+    port=8000,
+    settings=Settings(allow_reset=True, anonymized_telemetry=False),
+)
 vectordb = Chroma(
     client=chroma_client,
+    collection_name="langchain",
     embedding_function=OpenAIEmbeddings(),
 )
+op = get_conversation_chain(vectordb)
 
-op = vectordb.similarity_search("earthquake", 5)
-print(op)
-# op = get_conversation_chain(vectordb)
 
-# response = op({"question": "give me some earthquake results from california  "})
-# print(response["answer"])
+# response = op({"question": "give me news info about earthquakes in california today "})
+# response = op({"question": "give me news info about crime "})
+response = op({"question": "give me news about environment "})
+# response = op({"question": "give me wildfire info "})
+print(response["answer"])
