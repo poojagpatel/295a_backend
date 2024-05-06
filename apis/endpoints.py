@@ -89,11 +89,48 @@ def get_earthquakes():
             .skip(skip)
             .limit(page_size)
         )
+        # uniqueID: String
+        # Type: String (earthquake/wildfire/etc…)
+        # Time: String
+        # Title: String
+        # Description: String
+        # Url: String
+        # latitude: Double,
+        # longitude: Double
+        # intensity: Double
 
         # Convert the cursor to a list and jsonify the result
-        result = list(earthquakes_data)
+        data = list(earthquakes_data)
+        formatted_data = []
 
-        return jsonify(result)
+        for item in data:
+            unique_id = item["properties"]["code"]
+            event_type = item["type"]
+            time = item["properties"]["time"]
+            title = item["properties"]["title"]
+            description = item["properties"].get(
+                "alert", ""
+            )  # If 'alert' is not present, set to empty string
+            url = item["properties"]["url"]
+            latitude = item["geometry"]["coordinates"][1]
+            longitude = item["geometry"]["coordinates"][0]
+            intensity = item["properties"]["mag"]
+
+            formatted_data.append(
+                {
+                    "uniqueID": unique_id,
+                    "Type": event_type,
+                    "Time": time,
+                    "Title": title,
+                    "Description": description,
+                    "Url": url,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "intensity": intensity,
+                }
+            )
+
+        return jsonify(formatted_data)
 
     except Exception as e:
         # Handle exceptions and return an appropriate error response
@@ -119,9 +156,33 @@ def get_earthquake_by_code(code):
     """
     # Query MongoDB to find the earthquake record by code
     collection = db["earthquakes"]
-    earthquake = collection.find_one({"properties.code": code})
-    if earthquake:
-        return jsonify(earthquake)
+    earthquake_data = collection.find_one({"properties.code": code})
+    # Extracting desired fields
+    unique_id = earthquake_data["properties"]["code"]
+    event_type = earthquake_data["properties"]["type"]
+    time = earthquake_data["properties"]["time"]
+    title = earthquake_data["properties"]["title"]
+    description = earthquake_data["properties"]["place"]
+    url = earthquake_data["properties"]["url"]
+    latitude = earthquake_data["geometry"]["coordinates"][1]
+    longitude = earthquake_data["geometry"]["coordinates"][0]
+    intensity = earthquake_data["properties"]["mag"]
+
+    # Creating new dictionary
+    desired_data = {
+        "uniqueID": unique_id,
+        "Type": event_type,
+        "Time": time,
+        "Title": title,
+        "Description": description,
+        "Url": url,
+        "latitude": latitude,
+        "longitude": longitude,
+        "intensity": intensity,
+    }
+
+    if earthquake_data:
+        return jsonify(desired_data)
     else:
         return jsonify({"message": "Earthquake not found"}), 404
 
@@ -171,9 +232,38 @@ def get_wildfires():
         )
 
         # Convert the cursor to a list and jsonify the result
-        result = list(wildfire_data)
+        data = list(wildfire_data)
 
-        return jsonify(result)
+        formatted_data = []
+
+        for item in data:
+            unique_id = item["properties"]["UniqueId"]
+            event_type = item["properties"]["Type"]
+            time = item["properties"]["Started"]
+            title = item["properties"]["Name"]
+            description = (
+                item["properties"]["County"] + ", " + item["properties"]["Location"]
+            )
+            url = item["properties"]["Url"]
+            latitude = item["geometry"]["coordinates"][1]
+            longitude = item["geometry"]["coordinates"][0]
+            intensity = item["properties"]["AcresBurned"]
+
+            formatted_data.append(
+                {
+                    "uniqueID": unique_id,
+                    "Type": event_type,
+                    "Time": time,
+                    "Title": title,
+                    "Description": description,
+                    "Url": url,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "intensity": intensity,
+                }
+            )
+
+        return jsonify(formatted_data)
 
     except Exception as e:
         # Handle exceptions and return an appropriate error response
@@ -199,9 +289,33 @@ def get_wildfire_by_code(code):
     """
     # Query MongoDB to find the wildfire record by code
     collection = db["wildfires"]
-    wildfire = collection.find_one({"properties.UniqueId": code})
-    if wildfire:
-        return jsonify(wildfire)
+    data = collection.find_one({"properties.UniqueId": code})
+    # Extracting desired fields
+    unique_id = data["properties"]["UniqueId"]
+    event_type = data["properties"]["Type"]
+    time = data["properties"]["Started"]
+    title = data["properties"]["Name"]
+    description = data["properties"]["County"] + ", " + data["properties"]["Location"]
+    url = data["properties"]["Url"]
+    latitude = data["geometry"]["coordinates"][1]
+    longitude = data["geometry"]["coordinates"][0]
+    intensity = data["properties"]["AcresBurned"]
+
+    # Creating new dictionary
+    desired_data = {
+        "uniqueID": unique_id,
+        "Type": event_type,
+        "Time": time,
+        "Title": title,
+        "Description": description,
+        "Url": url,
+        "latitude": latitude,
+        "longitude": longitude,
+        "intensity": intensity,
+    }
+
+    if data:
+        return jsonify(desired_data)
     else:
         return jsonify({"message": "Wildfire not found"}), 404
 

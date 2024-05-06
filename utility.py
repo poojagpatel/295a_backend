@@ -86,6 +86,8 @@ def get_id_from_document(doc_type, document):
         return page_content.get("properties").get("id", None)
     elif doc_type == "wildfire":
         return page_content.get("properties").get("UniqueId", None)
+    elif doc_type == "news":
+        return page_content.get("article_id", None)
     else:
         return None
 

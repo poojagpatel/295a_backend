@@ -6,6 +6,41 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -116.55819,
+                    33.858369
+                ]
+            },
+            "properties": {
+                "Name": "Tram Fire",
+                "Final": false,
+                "Updated": "2024-05-05T13:36:39-07:00",
+                "Started": "2024-05-04T22:09:22Z",
+                "AdminUnit": null,
+                "AdminUnitUrl": null,
+                "County": "Riverside",
+                "Location": "Unknown / TBD",
+                "AcresBurned": 13.8,
+                "PercentContained": null,
+                "ControlStatement": null,
+                "AgencyNames": "",
+                "Longitude": -116.55819,
+                "Latitude": 33.858369,
+                "Type": "Wildfire",
+                "UniqueId": "4aad6061-4f7d-4a62-b441-255a9c53b43e",
+                "Url": "http://incidents.fire.ca.gov/incidents/2024/5/4/tram-fire/",
+                "ExtinguishedDate": "",
+                "ExtinguishedDateOnly": "",
+                "StartedDateOnly": "2024-05-04",
+                "IsActive": true,
+                "CalFireIncident": false,
+                "NotificationDesired": false
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -118.23,
                     34.9117
                 ]
@@ -388,10 +423,10 @@
         }
     ],
     "metadata": {
-        "lastUpdated": "2024-05-05T02:53:12",
+        "lastUpdated": "2024-05-05T14:04:49",
         "url": "https://incidents.fire.ca.gov/umbraco/api/IncidentApi/GeoJsonList?year=2024",
         "title": "Fire CA Incidents",
         "status": 200,
-        "count": 11
+        "count": 12
     }
 }
