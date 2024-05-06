@@ -109,7 +109,7 @@ def get_earthquakes():
             time = item["properties"]["time"]
             title = item["properties"]["title"]
             description = item["properties"].get(
-                "alert", ""
+                "detail", ""
             )  # If 'alert' is not present, set to empty string
             url = item["properties"]["url"]
             latitude = item["geometry"]["coordinates"][1]
