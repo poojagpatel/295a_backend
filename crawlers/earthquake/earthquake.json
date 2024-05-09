@@ -3,893 +3,213 @@
         {
             "type": "Feature",
             "properties": {
-                "mag": 0.42,
-                "place": "4 km NW of Cobb, CA",
-                "time": "2024-05-05 14:21:28.570000",
-                "updated": 1714944186313,
+                "mag": 1.4,
+                "place": "45 km SE of Denali National Park, Alaska",
+                "time": "2024-05-08 23:13:08.114000",
+                "updated": 1715235320757,
                 "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75001821",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75001821&format=geojson",
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z3iirf",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z3iirf&format=geojson",
                 "felt": null,
                 "cdi": null,
                 "mmi": null,
                 "alert": null,
                 "status": "automatic",
                 "tsunami": 0,
-                "sig": 3,
-                "net": "nc",
-                "code": "75001821",
-                "ids": ",nc75001821,",
-                "sources": ",nc,",
-                "types": ",nearby-cities,origin,phase-data,",
-                "nst": 7,
-                "dmin": 0.0112,
-                "rms": 0.02,
-                "gap": 185,
-                "magType": "md",
-                "type": "earthquake",
-                "title": "M 0.4 - 4 km NW of Cobb, CA"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -122.762336730957,
-                    38.8448333740234,
-                    1.08000004291534
-                ]
-            },
-            "id": "nc75001821"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 3.7,
-                "place": "17 km N of Cantwell, Alaska",
-                "time": "2024-05-05 14:21:13.758000",
-                "updated": 1714944524827,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245sqcd0o",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245sqcd0o&format=geojson",
-                "felt": 1,
-                "cdi": 3.4,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 211,
+                "sig": 30,
                 "net": "ak",
-                "code": "0245sqcd0o",
-                "ids": ",ak0245sqcd0o,",
-                "sources": ",ak,",
-                "types": ",dyfi,origin,phase-data,",
-                "nst": null,
-                "dmin": null,
-                "rms": 0.77,
-                "gap": null,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 3.7 - 17 km N of Cantwell, Alaska"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -148.8865,
-                    63.5479,
-                    5.1
-                ]
-            },
-            "id": "ak0245sqcd0o"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 0.2,
-                "place": "94 km NNW of Karluk, Alaska",
-                "time": "2024-05-05 14:03:06.833000",
-                "updated": 1714943068947,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245sq8hln",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245sq8hln&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 1,
-                "net": "ak",
-                "code": "0245sq8hln",
-                "ids": ",ak0245sq8hln,",
+                "code": "0245z3iirf",
+                "ids": ",ak0245z3iirf,",
                 "sources": ",ak,",
                 "types": ",origin,phase-data,",
                 "nst": null,
                 "dmin": null,
-                "rms": 0.62,
+                "rms": 0.52,
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 0.2 - 94 km NNW of Karluk, Alaska"
+                "title": "M 1.4 - 45 km SE of Denali National Park, Alaska"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -154.9841,
-                    58.3679,
-                    0
+                    -151.1121,
+                    63.2354,
+                    14.3
                 ]
             },
-            "id": "ak0245sq8hln"
+            "id": "ak0245z3iirf"
         },
         {
             "type": "Feature",
             "properties": {
-                "mag": 1.36,
-                "place": "13 km WNW of Anza, CA",
-                "time": "2024-05-05 13:46:05.430000",
-                "updated": 1714942616260,
+                "mag": 0.8,
+                "place": "7 km S of Salcha, Alaska",
+                "time": "2024-05-08 22:52:31.881000",
+                "updated": 1715234091423,
                 "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40740336",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40740336&format=geojson",
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z35hxh",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z35hxh&format=geojson",
                 "felt": null,
                 "cdi": null,
                 "mmi": null,
                 "alert": null,
                 "status": "automatic",
                 "tsunami": 0,
-                "sig": 28,
+                "sig": 10,
+                "net": "ak",
+                "code": "0245z35hxh",
+                "ids": ",ak0245z35hxh,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": null,
+                "dmin": null,
+                "rms": 0.68,
+                "gap": null,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 0.8 - 7 km S of Salcha, Alaska"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -146.9267,
+                    64.4558,
+                    10.4
+                ]
+            },
+            "id": "ak0245z35hxh"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.26,
+                "place": "8 km SW of Corona, CA",
+                "time": "2024-05-08 22:49:48.200000",
+                "updated": 1715234438870,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40743568",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40743568&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 24,
                 "net": "ci",
-                "code": "40740336",
-                "ids": ",ci40740336,",
+                "code": "40743568",
+                "ids": ",ci40743568,",
                 "sources": ",ci,",
                 "types": ",focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
-                "nst": 50,
-                "dmin": 0.03837,
-                "rms": 0.18,
-                "gap": 25,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.4 - 13 km WNW of Anza, CA"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -116.8063333,
-                    33.5785,
-                    8.21
-                ]
-            },
-            "id": "ci40740336"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 0.74,
-                "place": "13 km WNW of Anza, CA",
-                "time": "2024-05-05 13:44:34.480000",
-                "updated": 1714942932096,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40740328",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40740328&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 8,
-                "net": "ci",
-                "code": "40740328",
-                "ids": ",ci40740328,",
-                "sources": ",ci,",
-                "types": ",nearby-cities,origin,phase-data,scitech-link,",
-                "nst": 20,
-                "dmin": 0.03795,
-                "rms": 0.11,
-                "gap": 53,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 0.7 - 13 km WNW of Anza, CA"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -116.8066667,
-                    33.5803333,
-                    8.56
-                ]
-            },
-            "id": "ci40740328"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 5.6,
-                "place": "157 km WSW of Fakfak, Indonesia",
-                "time": "2024-05-05 13:37:12.049000",
-                "updated": 1714942987915,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000mwkd",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000mwkd&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": 5.496,
-                "alert": "green",
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 482,
-                "net": "us",
-                "code": "6000mwkd",
-                "ids": ",usauto6000mwkd,us6000mwkd,",
-                "sources": ",usauto,us,",
-                "types": ",internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
-                "nst": 81,
-                "dmin": 1.371,
-                "rms": 0.65,
-                "gap": 33,
-                "magType": "mww",
-                "type": "earthquake",
-                "title": "M 5.6 - 157 km WSW of Fakfak, Indonesia"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    130.9335,
-                    -3.3145,
-                    10
-                ]
-            },
-            "id": "us6000mwkd"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.7,
-                "place": "65 km SSW of Whites City, New Mexico",
-                "time": "2024-05-05 13:21:00.657000",
-                "updated": 1714941663013,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/tx2024ivyf",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=tx2024ivyf&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 44,
-                "net": "tx",
-                "code": "2024ivyf",
-                "ids": ",tx2024ivyf,",
-                "sources": ",tx,",
-                "types": ",origin,phase-data,",
-                "nst": 17,
-                "dmin": 0.1,
-                "rms": 0.3,
-                "gap": 154,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.7 - 65 km SSW of Whites City, New Mexico"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -104.529,
-                    31.596,
-                    3.4186
-                ]
-            },
-            "id": "tx2024ivyf"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.6,
-                "place": "61 km NE of Pedro Bay, Alaska",
-                "time": "2024-05-05 13:18:57.256000",
-                "updated": 1714941078165,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245spqdn0",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245spqdn0&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 39,
-                "net": "ak",
-                "code": "0245spqdn0",
-                "ids": ",ak0245spqdn0,",
-                "sources": ",ak,",
-                "types": ",origin,phase-data,",
-                "nst": null,
-                "dmin": null,
-                "rms": 0.31,
-                "gap": null,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.6 - 61 km NE of Pedro Bay, Alaska"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -153.2088,
-                    60.1122,
-                    146.4
-                ]
-            },
-            "id": "ak0245spqdn0"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 3.09,
-                "place": "8 km SSE of Maria Antonia, Puerto Rico",
-                "time": "2024-05-05 13:06:18.330000",
-                "updated": 1714942422370,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr71447828",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=pr71447828&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 147,
-                "net": "pr",
-                "code": "71447828",
-                "ids": ",pr71447828,",
-                "sources": ",pr,",
-                "types": ",origin,phase-data,",
-                "nst": 24,
-                "dmin": 0.06994,
-                "rms": 0.2,
-                "gap": 194,
-                "magType": "md",
-                "type": "earthquake",
-                "title": "M 3.1 - 8 km SSE of Maria Antonia, Puerto Rico"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -66.8481666666667,
-                    17.9113333333333,
-                    12.5
-                ]
-            },
-            "id": "pr71447828"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.6,
-                "place": "57 km S of Whites City, New Mexico",
-                "time": "2024-05-05 13:00:32.241000",
-                "updated": 1714941658017,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/tx2024ivxm",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=tx2024ivxm&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 39,
-                "net": "tx",
-                "code": "2024ivxm",
-                "ids": ",tx2024ivxm,",
-                "sources": ",tx,",
-                "types": ",origin,phase-data,",
-                "nst": 17,
-                "dmin": 0.1,
-                "rms": 0.3,
-                "gap": 70,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.6 - 57 km S of Whites City, New Mexico"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -104.366,
-                    31.653,
-                    4.0753
-                ]
-            },
-            "id": "tx2024ivxm"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.6,
-                "place": "6 km ESE of Big Lake, Alaska",
-                "time": "2024-05-05 12:58:21.195000",
-                "updated": 1714939231476,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245spdfvr",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245spdfvr&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 39,
-                "net": "ak",
-                "code": "0245spdfvr",
-                "ids": ",ak0245spdfvr,",
-                "sources": ",ak,",
-                "types": ",origin,phase-data,",
-                "nst": null,
-                "dmin": null,
-                "rms": 0.44,
-                "gap": null,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.6 - 6 km ESE of Big Lake, Alaska"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -149.8532,
-                    61.4951,
-                    46.3
-                ]
-            },
-            "id": "ak0245spdfvr"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.70000005,
-                "place": "9 km NE of P\u0101hala, Hawaii",
-                "time": "2024-05-05 12:52:30.480000",
-                "updated": 1714938863220,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74214487",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=hv74214487&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 44,
-                "net": "hv",
-                "code": "74214487",
-                "ids": ",hv74214487,",
-                "sources": ",hv,",
-                "types": ",origin,phase-data,",
-                "nst": 29,
-                "dmin": 0.08206,
-                "rms": 0.109999999,
-                "gap": 130,
-                "magType": "md",
-                "type": "earthquake",
-                "title": "M 1.7 - 9 km NE of P\u0101hala, Hawaii"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -155.404327392578,
-                    19.2528324127197,
-                    32.1300010681152
-                ]
-            },
-            "id": "hv74214487"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.07,
-                "place": "7 km NW of The Geysers, CA",
-                "time": "2024-05-05 12:51:11.810000",
-                "updated": 1714938767689,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75001811",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75001811&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 18,
-                "net": "nc",
-                "code": "75001811",
-                "ids": ",nc75001811,",
-                "sources": ",nc,",
-                "types": ",nearby-cities,origin,phase-data,",
-                "nst": 18,
-                "dmin": 0.008624,
-                "rms": 0.02,
-                "gap": 55,
-                "magType": "md",
-                "type": "earthquake",
-                "title": "M 1.1 - 7 km NW of The Geysers, CA"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -122.818664550781,
-                    38.8115005493164,
-                    2.86999988555908
-                ]
-            },
-            "id": "nc75001811"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 0.65,
-                "place": "8 km NW of The Geysers, CA",
-                "time": "2024-05-05 12:48:42.960000",
-                "updated": 1714938618785,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75001806",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75001806&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 6,
-                "net": "nc",
-                "code": "75001806",
-                "ids": ",nc75001806,",
-                "sources": ",nc,",
-                "types": ",nearby-cities,origin,phase-data,",
-                "nst": 7,
-                "dmin": 0.008604,
-                "rms": 0.01,
-                "gap": 116,
-                "magType": "md",
-                "type": "earthquake",
-                "title": "M 0.7 - 8 km NW of The Geysers, CA"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -122.826499938965,
-                    38.8176651000977,
-                    2.03999996185303
-                ]
-            },
-            "id": "nc75001806"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 3.9,
-                "place": "84 km SSW of Sand Point, Alaska",
-                "time": "2024-05-05 12:47:05.381000",
-                "updated": 1714942390214,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000mwk3",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000mwk3&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": 1.324,
-                "alert": null,
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 234,
-                "net": "us",
-                "code": "6000mwk3",
-                "ids": ",ak0245spb1qd,us6000mwk3,",
-                "sources": ",ak,us,",
-                "types": ",origin,phase-data,shakemap,",
-                "nst": 38,
-                "dmin": 0.783,
-                "rms": 0.47,
-                "gap": 151,
-                "magType": "mb",
-                "type": "earthquake",
-                "title": "M 3.9 - 84 km SSW of Sand Point, Alaska"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -161.1711,
-                    54.6781,
-                    46.693
-                ]
-            },
-            "id": "us6000mwk3"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 2.42,
-                "place": "10 km NNE of Ocotillo Wells, CA",
-                "time": "2024-05-05 12:42:29.200000",
-                "updated": 1714942629746,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40740288",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40740288&format=geojson",
-                "felt": 2,
-                "cdi": 2,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 90,
-                "net": "ci",
-                "code": "40740288",
-                "ids": ",ci40740288,",
-                "sources": ",ci,",
-                "types": ",dyfi,focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
-                "nst": 78,
-                "dmin": 0.09456,
+                "nst": 45,
+                "dmin": 0.03204,
                 "rms": 0.19,
-                "gap": 31,
+                "gap": 58,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.4 - 10 km NNE of Ocotillo Wells, CA"
+                "title": "M 1.3 - 8 km SW of Corona, CA"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -116.0863333,
-                    33.2211667,
-                    10.75
+                    -117.6356667,
+                    33.8185,
+                    3.68
                 ]
             },
-            "id": "ci40740288"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.56,
-                "place": "15 km E of Red Rock, Oklahoma",
-                "time": "2024-05-05 12:40:15.224000",
-                "updated": 1714938414799,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ok2024ivwv",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ok2024ivwv&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 37,
-                "net": "ok",
-                "code": "2024ivwv",
-                "ids": ",ok2024ivwv,",
-                "sources": ",ok,",
-                "types": ",origin,phase-data,",
-                "nst": 19,
-                "dmin": 0.03698237985,
-                "rms": 0.4387390889,
-                "gap": 91.21430206,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.6 - 15 km E of Red Rock, Oklahoma"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -97.00904083,
-                    36.47738647,
-                    3.817592621
-                ]
-            },
-            "id": "ok2024ivwv"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 4.9,
-                "place": "southeast of Easter Island",
-                "time": "2024-05-05 12:33:39.626000",
-                "updated": 1714939037040,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000mwjw",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000mwjw&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 369,
-                "net": "us",
-                "code": "6000mwjw",
-                "ids": ",us6000mwjw,",
-                "sources": ",us,",
-                "types": ",origin,phase-data,",
-                "nst": 58,
-                "dmin": 14.081,
-                "rms": 0.48,
-                "gap": 111,
-                "magType": "mb",
-                "type": "earthquake",
-                "title": "M 4.9 - southeast of Easter Island"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -95.5391,
-                    -37.2111,
-                    10
-                ]
-            },
-            "id": "us6000mwjw"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 4.9,
-                "place": "West Chile Rise",
-                "time": "2024-05-05 12:27:37.161000",
-                "updated": 1714938739040,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000mwjy",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000mwjy&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "reviewed",
-                "tsunami": 0,
-                "sig": 369,
-                "net": "us",
-                "code": "6000mwjy",
-                "ids": ",us6000mwjy,",
-                "sources": ",us,",
-                "types": ",origin,phase-data,",
-                "nst": 49,
-                "dmin": 13.503,
-                "rms": 0.69,
-                "gap": 218,
-                "magType": "mb",
-                "type": "earthquake",
-                "title": "M 4.9 - West Chile Rise"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -94.7759,
-                    -37.3236,
-                    10
-                ]
-            },
-            "id": "us6000mwjy"
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "mag": 1.86,
-                "place": "8 km S of Volcano, Hawaii",
-                "time": "2024-05-05 12:20:54.990000",
-                "updated": 1714937014780,
-                "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74214457",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=hv74214457&format=geojson",
-                "felt": null,
-                "cdi": null,
-                "mmi": null,
-                "alert": null,
-                "status": "automatic",
-                "tsunami": 0,
-                "sig": 53,
-                "net": "hv",
-                "code": "74214457",
-                "ids": ",hv74214457,",
-                "sources": ",hv,",
-                "types": ",origin,phase-data,",
-                "nst": 17,
-                "dmin": 0.01876,
-                "rms": 0.180000007,
-                "gap": 90,
-                "magType": "ml",
-                "type": "earthquake",
-                "title": "M 1.9 - 8 km S of Volcano, Hawaii"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -155.240005493164,
-                    19.3700008392334,
-                    0.109999999403954
-                ]
-            },
-            "id": "hv74214457"
+            "id": "ci40743568"
         },
         {
             "type": "Feature",
             "properties": {
                 "mag": 1.8,
-                "place": "5 km WNW of Calimesa, CA",
-                "time": "2024-05-05 12:16:55.380000",
-                "updated": 1714942981870,
+                "place": "11 km W of Fishhook, Alaska",
+                "time": "2024-05-08 22:47:24.024000",
+                "updated": 1715233783313,
                 "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40740264",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40740264&format=geojson",
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z34eqa",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z34eqa&format=geojson",
                 "felt": null,
                 "cdi": null,
                 "mmi": null,
                 "alert": null,
-                "status": "reviewed",
+                "status": "automatic",
                 "tsunami": 0,
                 "sig": 50,
-                "net": "ci",
-                "code": "40740264",
-                "ids": ",ci40740264,",
-                "sources": ",ci,",
-                "types": ",focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
-                "nst": 73,
-                "dmin": 0.02656,
-                "rms": 0.17,
-                "gap": 28,
+                "net": "ak",
+                "code": "0245z34eqa",
+                "ids": ",ak0245z34eqa,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": null,
+                "dmin": null,
+                "rms": 0.59,
+                "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 1.8 - 5 km WNW of Calimesa, CA"
+                "title": "M 1.8 - 11 km W of Fishhook, Alaska"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -117.1045,
-                    34.0096667,
-                    12.73
+                    -149.452,
+                    61.7392,
+                    30.4
                 ]
             },
-            "id": "ci40740264"
+            "id": "ak0245z34eqa"
         },
         {
             "type": "Feature",
             "properties": {
-                "mag": 4.8,
-                "place": "10 km WSW of Poblacion, San Felipe, Philippines",
-                "time": "2024-05-05 12:08:49.863000",
-                "updated": 1714937199040,
+                "mag": 1.7,
+                "place": "48 km WNW of Aleneva, Alaska",
+                "time": "2024-05-08 22:39:39.998000",
+                "updated": 1715233286757,
                 "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000mwjn",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000mwjn&format=geojson",
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z32q8f",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z32q8f&format=geojson",
                 "felt": null,
                 "cdi": null,
                 "mmi": null,
                 "alert": null,
-                "status": "reviewed",
+                "status": "automatic",
                 "tsunami": 0,
-                "sig": 354,
-                "net": "us",
-                "code": "6000mwjn",
-                "ids": ",us6000mwjn,",
-                "sources": ",us,",
+                "sig": 44,
+                "net": "ak",
+                "code": "0245z32q8f",
+                "ids": ",ak0245z32q8f,",
+                "sources": ",ak,",
                 "types": ",origin,phase-data,",
-                "nst": 51,
-                "dmin": 7.805,
-                "rms": 0.59,
-                "gap": 100,
-                "magType": "mb",
+                "nst": null,
+                "dmin": null,
+                "rms": 0.19,
+                "gap": null,
+                "magType": "ml",
                 "type": "earthquake",
-                "title": "M 4.8 - 10 km WSW of Poblacion, San Felipe, Philippines"
+                "title": "M 1.7 - 48 km WNW of Aleneva, Alaska"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    119.9744,
-                    15.0412,
-                    42.444
+                    -153.6457,
+                    58.2641,
+                    73.2
                 ]
             },
-            "id": "us6000mwjn"
+            "id": "ak0245z32q8f"
         },
         {
             "type": "Feature",
             "properties": {
-                "mag": 0.77,
-                "place": "7 km NNW of The Geysers, CA",
-                "time": "2024-05-05 12:02:50.240000",
-                "updated": 1714935867454,
+                "mag": 0.76,
+                "place": "7 km WNW of Cobb, CA",
+                "time": "2024-05-08 22:31:57.080000",
+                "updated": 1715232812873,
                 "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75001766",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75001766&format=geojson",
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75003666",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75003666&format=geojson",
                 "felt": null,
                 "cdi": null,
                 "mmi": null,
@@ -898,75 +218,395 @@
                 "tsunami": 0,
                 "sig": 9,
                 "net": "nc",
-                "code": "75001766",
-                "ids": ",nc75001766,",
+                "code": "75003666",
+                "ids": ",nc75003666,",
                 "sources": ",nc,",
                 "types": ",nearby-cities,origin,phase-data,",
-                "nst": 22,
-                "dmin": 0.004101,
-                "rms": 0.01,
-                "gap": 40,
+                "nst": 12,
+                "dmin": 0.007282,
+                "rms": 0.02,
+                "gap": 74,
                 "magType": "md",
                 "type": "earthquake",
-                "title": "M 0.8 - 7 km NNW of The Geysers, CA"
+                "title": "M 0.8 - 7 km WNW of Cobb, CA"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -122.805335998535,
-                    38.8251647949219,
-                    2.47000002861023
+                    -122.804664611816,
+                    38.8293342590332,
+                    1.41999995708466
                 ]
             },
-            "id": "nc75001766"
+            "id": "nc75003666"
         },
         {
             "type": "Feature",
             "properties": {
-                "mag": 2.3,
-                "place": "15 km ESE of Denali National Park, Alaska",
-                "time": "2024-05-05 12:02:34.432000",
-                "updated": 1714936229040,
+                "mag": 1.3,
+                "place": "73 km W of Salamatof, Alaska",
+                "time": "2024-05-08 22:22:52.587000",
+                "updated": 1715232249313,
                 "tz": null,
-                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245sp1gtc",
-                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245sp1gtc&format=geojson",
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z2z416",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z2z416&format=geojson",
                 "felt": null,
                 "cdi": null,
                 "mmi": null,
                 "alert": null,
                 "status": "automatic",
                 "tsunami": 0,
-                "sig": 81,
+                "sig": 26,
                 "net": "ak",
-                "code": "0245sp1gtc",
-                "ids": ",us6000mwjl,ak0245sp1gtc,",
-                "sources": ",us,ak,",
+                "code": "0245z2z416",
+                "ids": ",ak0245z2z416,",
+                "sources": ",ak,",
                 "types": ",origin,phase-data,",
                 "nst": null,
                 "dmin": null,
-                "rms": 0.74,
+                "rms": 0.14,
                 "gap": null,
                 "magType": "ml",
                 "type": "earthquake",
-                "title": "M 2.3 - 15 km ESE of Denali National Park, Alaska"
+                "title": "M 1.3 - 73 km W of Salamatof, Alaska"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -151.4524,
-                    63.464,
-                    3.5
+                    -152.6583,
+                    60.7015,
+                    15
                 ]
             },
-            "id": "ak0245sp1gtc"
+            "id": "ak0245z2z416"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.51,
+                "place": "4 km NNW of The Geysers, CA",
+                "time": "2024-05-08 22:22:51.630000",
+                "updated": 1715232268777,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75003661",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75003661&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 35,
+                "net": "nc",
+                "code": "75003661",
+                "ids": ",nc75003661,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 26,
+                "dmin": 0.009158,
+                "rms": 0.04,
+                "gap": 67,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 1.5 - 4 km NNW of The Geysers, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.779167175293,
+                    38.8041648864746,
+                    2.60999989509583
+                ]
+            },
+            "id": "nc75003661"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.3,
+                "place": "18 km NNE of Chickaloon, Alaska",
+                "time": "2024-05-08 22:16:44.068000",
+                "updated": 1715231943522,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z2xt28",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z2xt28&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 26,
+                "net": "ak",
+                "code": "0245z2xt28",
+                "ids": ",ak0245z2xt28,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": null,
+                "dmin": null,
+                "rms": 0.93,
+                "gap": null,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.3 - 18 km NNE of Chickaloon, Alaska"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -148.3925,
+                    61.9632,
+                    32.8
+                ]
+            },
+            "id": "ak0245z2xt28"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.21,
+                "place": "10 km NNW of Anza, CA",
+                "time": "2024-05-08 22:15:18.930000",
+                "updated": 1715232367410,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40743560",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40743560&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 23,
+                "net": "ci",
+                "code": "40743560",
+                "ids": ",ci40743560,",
+                "sources": ",ci,",
+                "types": ",focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
+                "nst": 64,
+                "dmin": 0.0454,
+                "rms": 0.18,
+                "gap": 36,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.2 - 10 km NNW of Anza, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.7163333,
+                    33.6405,
+                    12.08
+                ]
+            },
+            "id": "ci40743560"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 0.96,
+                "place": "10 km SW of Idyllwild, CA",
+                "time": "2024-05-08 21:57:41.540000",
+                "updated": 1715231033733,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci40743552",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci40743552&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 14,
+                "net": "ci",
+                "code": "40743552",
+                "ids": ",ci40743552,",
+                "sources": ",ci,",
+                "types": ",nearby-cities,origin,phase-data,scitech-link,",
+                "nst": 52,
+                "dmin": 0.07891,
+                "rms": 0.15,
+                "gap": 55,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.0 - 10 km SW of Idyllwild, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.7961667,
+                    33.6716667,
+                    13.6
+                ]
+            },
+            "id": "ci40743552"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 2,
+                "place": "47 km SSE of Nelchina, Alaska",
+                "time": "2024-05-08 21:52:50.846000",
+                "updated": 1715230481696,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z2k3rw",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z2k3rw&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 62,
+                "net": "ak",
+                "code": "0245z2k3rw",
+                "ids": ",ak0245z2k3rw,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": null,
+                "dmin": null,
+                "rms": 0.73,
+                "gap": null,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 2.0 - 47 km SSE of Nelchina, Alaska"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -146.496,
+                    61.5838,
+                    29.7
+                ]
+            },
+            "id": "ak0245z2k3rw"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.7,
+                "place": "67 km N of Petersville, Alaska",
+                "time": "2024-05-08 21:46:48.802000",
+                "updated": 1715230158132,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0245z2itbk",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ak0245z2itbk&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 44,
+                "net": "ak",
+                "code": "0245z2itbk",
+                "ids": ",ak0245z2itbk,",
+                "sources": ",ak,",
+                "types": ",origin,phase-data,",
+                "nst": null,
+                "dmin": null,
+                "rms": 0.51,
+                "gap": null,
+                "magType": "ml",
+                "type": "earthquake",
+                "title": "M 1.7 - 67 km N of Petersville, Alaska"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -150.5528,
+                    63.0931,
+                    95.9
+                ]
+            },
+            "id": "ak0245z2itbk"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 1.27,
+                "place": "5 km NE of Hollister, CA",
+                "time": "2024-05-08 21:33:40.450000",
+                "updated": 1715229316095,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75003656",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75003656&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 25,
+                "net": "nc",
+                "code": "75003656",
+                "ids": ",nc75003656,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 8,
+                "dmin": 0.05321,
+                "rms": 0.09,
+                "gap": 121,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 1.3 - 5 km NE of Hollister, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.361000061035,
+                    36.882999420166,
+                    6.26000022888184
+                ]
+            },
+            "id": "nc75003656"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 0.75,
+                "place": "7 km WNW of Cobb, CA",
+                "time": "2024-05-08 21:30:06.240000",
+                "updated": 1715229101015,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75003651",
+                "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75003651&format=geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 9,
+                "net": "nc",
+                "code": "75003651",
+                "ids": ",nc75003651,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 9,
+                "dmin": 0.008417,
+                "rms": 0.01,
+                "gap": 74,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 0.8 - 7 km WNW of Cobb, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.801498413086,
+                    38.828498840332,
+                    1.58000004291534
+                ]
+            },
+            "id": "nc75003651"
         }
     ],
     "metadata": {
-        "lastUpdated": "2024-05-05T14:31:57",
-        "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2024-05-05T00:00:00",
+        "lastUpdated": "2024-05-08T23:15:33",
+        "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2024-05-08T00:00:00",
         "title": "USGS Earthquakes",
         "status": 200,
-        "count": 24
+        "count": 15
     },
     "type": "FeatureCollection"
 }

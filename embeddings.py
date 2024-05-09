@@ -85,11 +85,11 @@ def create_store_news_embeddings():
 
 if __name__ == "__main__":
     chroma_client = chromadb.HttpClient(host=os.getenv("DB_HOST"), port=8000)
-    # create_store_eq1_embeddings()
-    # print("created earthquake embeddings")
+    create_store_eq1_embeddings()
+    print("created earthquake embeddings")
     # create_store_we_embeddings()
     # print("created weather embeddings")
     create_store_wf_embeddings()
     print("created wildfire embeddings")
-    # create_store_news_embeddings()
-    # print("created news embeddings")
+    create_store_news_embeddings()
+    print("created news embeddings")

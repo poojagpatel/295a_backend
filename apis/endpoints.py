@@ -137,8 +137,6 @@ def get_earthquakes():
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
 
 
-
-
 @app.route("/api/eq_by_time", methods=["GET"])
 def get_earthquakes_by_time():
     """
@@ -181,12 +179,18 @@ def get_earthquakes_by_time():
         # Use the find method on the collection to retrieve paginated data
         # Sort the data based on the 'updated' field in descending order
         earthquakes_data = (
-            earthquakes_collection.find({
-                "properties.time" :{
-                    "$gte": str(request.args.get("start_time", '2024-05-02 08:00:00')),
-                    "$lte": str(request.args.get("end_time", '2024-05-02 09:00:00'))
+            earthquakes_collection.find(
+                {
+                    "properties.time": {
+                        "$gte": str(
+                            request.args.get("start_time", "2024-05-02 08:00:00")
+                        ),
+                        "$lte": str(
+                            request.args.get("end_time", "2024-05-02 09:00:00")
+                        ),
+                    }
                 }
-            })
+            )
             .sort("properties.time", ASCENDING)
             .skip(skip)
             .limit(page_size)
@@ -200,7 +204,6 @@ def get_earthquakes_by_time():
     except Exception as e:
         # Handle exceptions and return an appropriate error response
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
-
 
 
 @app.route("/api/eq/<string:code>", methods=["GET"])
@@ -292,7 +295,7 @@ def get_wildfires():
         # Sort the data based on the 'updated' field in descending order
         wildfire_data = (
             wildfire_collection.find({}, {"_id": 0})
-            .sort("properties.updated", DESCENDING)
+            .sort("properties.Updated", DESCENDING)
             .skip(skip)
             .limit(page_size)
         )
@@ -334,7 +337,6 @@ def get_wildfires():
     except Exception as e:
         # Handle exceptions and return an appropriate error response
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
-
 
 
 @app.route("/api/wf_by_time", methods=["GET"])
@@ -379,12 +381,18 @@ def get_wildfires_by_time():
         # Use the find method on the collection to retrieve paginated data
         # Sort the data based on the 'updated' field in ascending order
         wildfires_data = (
-            wildfire_collection.find({
-                "properties.Updated" :{
-                    "$gte": str(request.args.get("start_time",'2024-05-03T12:10:48Z')),
-                    "$lte": str(request.args.get("end_time", '2024-05-03T13:50:48Z'))
+            wildfire_collection.find(
+                {
+                    "properties.Updated": {
+                        "$gte": str(
+                            request.args.get("start_time", "2024-05-03T12:10:48Z")
+                        ),
+                        "$lte": str(
+                            request.args.get("end_time", "2024-05-03T13:50:48Z")
+                        ),
+                    }
                 }
-            })
+            )
             .sort("properties.Updated", ASCENDING)
             .skip(skip)
             .limit(page_size)
@@ -498,7 +506,6 @@ def get_weather_misc():
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
 
 
-
 @app.route("/api/wt_by_time", methods=["GET"])
 def get_weather_by_time():
     """
@@ -541,12 +548,18 @@ def get_weather_by_time():
         # Use the find method on the collection to retrieve paginated data
         # Sort the data based on the 'updated' field in ascending order
         weather_data = (
-            weather_collection.find({
-                "properties.sent" :{
-                    "$gte": str(request.args.get("start_time",'2024-04-29T15:00:00')),
-                    "$lte": str(request.args.get("end_time", '2024-04-29T16:00:00'))
+            weather_collection.find(
+                {
+                    "properties.sent": {
+                        "$gte": str(
+                            request.args.get("start_time", "2024-04-29T15:00:00")
+                        ),
+                        "$lte": str(
+                            request.args.get("end_time", "2024-04-29T16:00:00")
+                        ),
+                    }
                 }
-            })
+            )
             .sort("properties.sent", ASCENDING)
             .skip(skip)
             .limit(page_size)
@@ -558,9 +571,6 @@ def get_weather_by_time():
     except Exception as e:
         # Handle exceptions and return an appropriate error response
         return jsonify({"error": str(e)}), 500  # HTTP 500 for internal server error
-
-
-
 
 
 @app.route("/api/weather/<string:code>", methods=["GET"])
@@ -694,7 +704,6 @@ def ask():
     response = op({"question": question})
 
     return jsonify({"answer": response["answer"]})
-
 
 
 if __name__ == "__main__":
