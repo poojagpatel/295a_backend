@@ -1,5 +1,3 @@
-from sys import exception
-from turtle import st
 import firebase_admin
 from firebase_admin import credentials, messaging
 import requests
@@ -11,7 +9,8 @@ from datetime import datetime, timedelta
 
 load_dotenv()
 
-cred = credentials.Certificate("./emergency-news-delivery-firebase-adminsdk.json")
+# cred = credentials.Certificate("./emergency-news-delivery-firebase-adminsdk-2tiy5-34f226f552-copy1.json")
+cred = credentials.Certificate("veracity-a7ee2-firebase-adminsdk-kt14x-f52eaf36fd.json")
 app = firebase_admin.initialize_app(cred)
 
 def send_message_to_topic(topic_name, data):
@@ -48,12 +47,11 @@ def get_earthquakes():
         num_results += len(result)
         page_counter += 1
         
-        print(f'Number of earthquake records fetched for the timeframe {start_time} - {end_time} : {num_results}.')
         if len(result) == 0:
             break
 
         data.extend(result)
-    
+    print(f'Number of earthquake records fetched for the timeframe {start_time} - {end_time} : {num_results}.')
     return data
 
 
@@ -78,12 +76,12 @@ def get_wildfires():
         result = response.json()
         num_results += len(result)
         page_counter += 1
-        print(f"Number of wilfire records fetched for the timeframe {start_time.replace('T', ' ').replace('Z', '')} - {end_time.replace('T', ' ').replace('Z', '')} : {num_results}.")
         
         if len(result) == 0:
             break
 
         data.extend(result)
+    print(f"Number of wildfire records fetched for the timeframe {start_time.replace('T', ' ').replace('Z', '')} - {end_time.replace('T', ' ').replace('Z', '')} : {num_results}.")
     return data
 
 
@@ -94,8 +92,8 @@ def get_weather_alerts():
     page_size = 20
     end_time = datetime.now().strftime('%Y-%m-%dT%H:00:00')
     start_time = (datetime.now()  - timedelta(hours = 1)).strftime('%Y-%m-%dT%H:00:00')
-    start_time = '2024-04-29T15:00:00'
-    end_time = '2024-04-29T16:00:00'
+    # start_time = '2024-04-29T15:00:00'
+    # end_time = '2024-04-29T16:00:00'
     
     num_results = 0
     data = []
@@ -111,11 +109,11 @@ def get_weather_alerts():
         num_results += len(result)
         page_counter += 1
         
-        print(f'Number of weather alert records fetched for the timeframe {start_time}, {end_time} : {num_results}.')
         if len(result) == 0:
             break
 
         data.extend(result)
+    print(f'Number of weather alert records fetched for the timeframe {start_time}, {end_time} : {num_results}.')
     return data
 
 
@@ -124,7 +122,7 @@ def send_earthquake_messages():
     topic_name = 'earthquake'
     events = get_earthquakes()
     if not events:
-        print('No records found to send to the firebase topic.')
+        print(f'No records found to send to the firebase topic: {topic_name}.')
         return None
     
     msg_count = 0
@@ -132,16 +130,17 @@ def send_earthquake_messages():
         try:
             event_coords = (event['geometry']['coordinates'][1], event['geometry']['coordinates'][0])
             data = {
-                    'id': event['_id'],
-                    'topic_name': topic_name,
-                    'title': event['properties']['title'],
+                    'uniqueID': event['_id'],
+                    'Type': event['properties']['type'].lower(),
+                    'Title': event['properties']['title'],
+                    'Description': event['properties']['detail'],
+                    'Time': event['properties']['time'][:19],
                     'location': event['properties']['place'],
-                    'time_started': event['properties']['time'][:19],
-                    'magnitude': str(event['properties']['mag']),
-                    'url': event['properties']['url'],
-                    'type': event['properties']['type'],
                     'latitude': str(event_coords[0]),
                     'longitude': str(event_coords[1]),
+                    'intensity': str(event['properties']['mag']),
+                    'Url': event['properties']['url'],
+                    'topic_name': topic_name,
                     'msg_timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 }
             send_message_to_topic(topic_name, data)
@@ -149,30 +148,32 @@ def send_earthquake_messages():
 
         except Exception as e:
             print('Message could not be delievered.')
-    print('Total messages sent: ', msg_count)
+    print(f'Total messages sent to the topic {topic_name} are: ', msg_count)
         
 
 def send_wildfire_messages():
     topic_name = 'wildfire'
     events = get_wildfires()
     if not events:
-        print('No records found to send to the firebase topic.')
+        print(f'No records found to send to the firebase topic: {topic_name}.')
         return None
     
     msg_count = 0
     for event in events:
         try:    
             data = {
-                    'id': event['_id'],
-                    'topic_name': topic_name,
-                    'title': event['properties']['Name'],
-                    'location': event['properties']['Location'],
+                    'uniqueID': event['_id'],
+                    'Type': event['properties']['Type'].lower(),
+                    'Title': event['properties']['Name'],
+                    'Description': event["properties"]["County"] + ", " + event["properties"]["Location"],
+                    'Time': event['properties']['Updated'].replace('T', ' ').replace('Z', ''),
                     'time_started': event['properties']['Started'].replace('T', ' ').replace('Z', ''),
-                    'time_updated': event['properties']['Updated'].replace('T', ' ').replace('Z', ''),
-                    'url': event['properties']['Url'],
-                    'type': event['properties']['Type'],
+                    'location': event['properties']['Location'],
                     'latitude': str(event['properties']['Latitude']),
                     'longitude': str(event['properties']['Longitude']),
+                    'intensity': str(event['properties']['AcresBurned']),
+                    'Url': event['properties']['Url'],
+                    'topic_name': topic_name,
                     'msg_timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 }
             
@@ -181,7 +182,7 @@ def send_wildfire_messages():
         except Exception as e:
             print('Message could not be delievered.')
 
-    print('Total messages sent: ', msg_count)
+    print(f'Total messages sent to the topic {topic_name} are: ', msg_count)
 
 
 
@@ -231,5 +232,3 @@ def send_weather_messages():
 if __name__ == '__main__':
     send_earthquake_messages()
     send_wildfire_messages()
-    #send_weather_messages()
-    
